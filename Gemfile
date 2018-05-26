@@ -17,6 +17,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'time_difference'
 
 group :development, :test do
   gem 'byebug'
@@ -27,4 +28,3 @@ group :development do
   gem 'spring'
   gem 'rb-readline'
 end
-
