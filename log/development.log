@@ -3608,3 +3608,325 @@ LINE 1: ...rls".* FROM "urls" WHERE ("urls"."last_crawled" = '' OR "url...
   [1m[36mUrl Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "urls" WHERE ("urls"."url" = 'https://avvo.com/all-lawyers/ok.html' AND "urls"."id" != 38) LIMIT 1[0m
   [1m[35mSQL (0.2ms)[0m  UPDATE "urls" SET "last_crawled" = $1, "updated_at" = $2 WHERE "urls"."id" = $3  [["last_crawled", "2018-05-27 00:56:45.295858"], ["updated_at", "2018-05-27 00:56:45.297326"], ["id", 38]]
   [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[36mUrl Load (1.7ms)[0m  [1mSELECT  "urls".* FROM "urls" WHERE "urls"."domain" = $1 AND "urls"."last_crawled" IS NULL LIMIT 2[0m  [["domain", "avvo"]]
+  [1m[35mUrl Load (1.0ms)[0m  SELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1  [["url", "https://avvo.com/litigation-lawyer/al.html?page=2"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUrl Exists (0.3ms)[0m  SELECT  1 AS one FROM "urls" WHERE "urls"."url" = 'https://avvo.com/litigation-lawyer/al.html?page=2' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "urls" ("url", "url_type", "domain", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["url", "https://avvo.com/litigation-lawyer/al.html?page=2"], ["url_type", "user"], ["domain", "avvo"], ["created_at", "2018-05-27 01:00:00.929357"], ["updated_at", "2018-05-27 01:00:00.929357"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36mUrl Load (0.3ms)[0m  [1mSELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1[0m  [["url", "https://avvo.com/litigation-lawyer/al.html?page=3"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUrl Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "urls" WHERE "urls"."url" = 'https://avvo.com/litigation-lawyer/al.html?page=3' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "urls" ("url", "url_type", "domain", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["url", "https://avvo.com/litigation-lawyer/al.html?page=3"], ["url_type", "user"], ["domain", "avvo"], ["created_at", "2018-05-27 01:00:00.934110"], ["updated_at", "2018-05-27 01:00:00.934110"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mUrl Load (0.2ms)[0m  SELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1  [["url", "https://avvo.com/litigation-lawyer/al.html?page=4"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUrl Exists (0.4ms)[0m  SELECT  1 AS one FROM "urls" WHERE "urls"."url" = 'https://avvo.com/litigation-lawyer/al.html?page=4' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "urls" ("url", "url_type", "domain", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["url", "https://avvo.com/litigation-lawyer/al.html?page=4"], ["url_type", "user"], ["domain", "avvo"], ["created_at", "2018-05-27 01:00:00.938330"], ["updated_at", "2018-05-27 01:00:00.938330"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mUrl Load (0.2ms)[0m  [1mSELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1[0m  [["url", "https://avvo.com/litigation-lawyer/al.html?page=2"]]
+  [1m[35mUrl Load (0.3ms)[0m  SELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1  [["url", "https://avvo.com/attorneys/35203-al-christopher-hamer-4007940.html"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUrl Exists (0.4ms)[0m  SELECT  1 AS one FROM "urls" WHERE "urls"."url" = 'https://avvo.com/attorneys/35203-al-christopher-hamer-4007940.html' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "urls" ("url", "url_type", "domain", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["url", "https://avvo.com/attorneys/35203-al-christopher-hamer-4007940.html"], ["url_type", "lawyer"], ["domain", "avvo"], ["created_at", "2018-05-27 01:00:00.957185"], ["updated_at", "2018-05-27 01:00:00.957185"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36mUrl Load (0.2ms)[0m  [1mSELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1[0m  [["url", "https://avvo.com/attorneys/35203-al-william-white-1900393.html"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUrl Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "urls" WHERE "urls"."url" = 'https://avvo.com/attorneys/35203-al-william-white-1900393.html' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "urls" ("url", "url_type", "domain", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["url", "https://avvo.com/attorneys/35203-al-william-white-1900393.html"], ["url_type", "lawyer"], ["domain", "avvo"], ["created_at", "2018-05-27 01:00:00.961472"], ["updated_at", "2018-05-27 01:00:00.961472"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mUrl Load (0.2ms)[0m  SELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1  [["url", "https://avvo.com/attorneys/35203-al-h-dodd-4227847.html"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUrl Exists (0.4ms)[0m  SELECT  1 AS one FROM "urls" WHERE "urls"."url" = 'https://avvo.com/attorneys/35203-al-h-dodd-4227847.html' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "urls" ("url", "url_type", "domain", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["url", "https://avvo.com/attorneys/35203-al-h-dodd-4227847.html"], ["url_type", "lawyer"], ["domain", "avvo"], ["created_at", "2018-05-27 01:00:00.966399"], ["updated_at", "2018-05-27 01:00:00.966399"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mUrl Load (0.2ms)[0m  [1mSELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1[0m  [["url", "https://avvo.com/attorneys/35203-al-gregory-brockwell-4306653.html"]]
+  [1m[35mUrl Load (0.2ms)[0m  SELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1  [["url", "https://avvo.com/attorneys/35804-al-tazewell-shepard-4308283.html"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUrl Exists (0.4ms)[0m  SELECT  1 AS one FROM "urls" WHERE "urls"."url" = 'https://avvo.com/attorneys/35804-al-tazewell-shepard-4308283.html' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "urls" ("url", "url_type", "domain", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["url", "https://avvo.com/attorneys/35804-al-tazewell-shepard-4308283.html"], ["url_type", "lawyer"], ["domain", "avvo"], ["created_at", "2018-05-27 01:00:00.971401"], ["updated_at", "2018-05-27 01:00:00.971401"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mUrl Load (0.2ms)[0m  [1mSELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1[0m  [["url", "https://avvo.com/attorneys/35901-al-bradley-cornett-1953824.html"]]
+  [1m[35mUrl Load (0.2ms)[0m  SELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1  [["url", "https://avvo.com/attorneys/36104-al-raley-wiggins-4091166.html"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUrl Exists (0.3ms)[0m  SELECT  1 AS one FROM "urls" WHERE "urls"."url" = 'https://avvo.com/attorneys/36104-al-raley-wiggins-4091166.html' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "urls" ("url", "url_type", "domain", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["url", "https://avvo.com/attorneys/36104-al-raley-wiggins-4091166.html"], ["url_type", "lawyer"], ["domain", "avvo"], ["created_at", "2018-05-27 01:00:00.976011"], ["updated_at", "2018-05-27 01:00:00.976011"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mUrl Load (0.2ms)[0m  [1mSELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1[0m  [["url", "https://avvo.com/attorneys/36601-al-gregory-vaughan-4308352.html"]]
+  [1m[35mUrl Load (0.2ms)[0m  SELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1  [["url", "https://avvo.com/attorneys/35203-al-jeffrey-leonard-492144.html"]]
+  [1m[36mUrl Load (0.3ms)[0m  [1mSELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1[0m  [["url", "https://avvo.com/attorneys/35203-al-sam-knight-4311923.html"]]
+  [1m[35mUrl Load (0.2ms)[0m  SELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1  [["url", "https://avvo.com/litigation-lawyer/al.html"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUrl Exists (0.4ms)[0m  SELECT  1 AS one FROM "urls" WHERE ("urls"."url" = 'https://avvo.com/litigation-lawyer/al.html' AND "urls"."id" != 67) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "urls" SET "last_crawled" = $1, "updated_at" = $2 WHERE "urls"."id" = $3[0m  [["last_crawled", "2018-05-27 01:00:00.980474"], ["updated_at", "2018-05-27 01:00:00.982436"], ["id", 67]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36mUrl Load (1.3ms)[0m  [1mSELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1[0m  [["url", "https://avvo.com/bankruptcy-debt-lawyer/ca.html"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUrl Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "urls" WHERE "urls"."url" = 'https://avvo.com/bankruptcy-debt-lawyer/ca.html' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "urls" ("url", "url_type", "domain", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["url", "https://avvo.com/bankruptcy-debt-lawyer/ca.html"], ["url_type", "location_specialty"], ["domain", "avvo"], ["created_at", "2018-05-27 01:00:01.370340"], ["updated_at", "2018-05-27 01:00:01.370340"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mUrl Load (0.2ms)[0m  SELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1  [["url", "https://avvo.com/all-lawyers/ca.html"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUrl Exists (0.4ms)[0m  SELECT  1 AS one FROM "urls" WHERE ("urls"."url" = 'https://avvo.com/all-lawyers/ca.html' AND "urls"."id" != 6) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "urls" SET "last_crawled" = $1, "updated_at" = $2 WHERE "urls"."id" = $3[0m  [["last_crawled", "2018-05-27 01:00:01.373608"], ["updated_at", "2018-05-27 01:00:01.375768"], ["id", 6]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36mUrl Load (0.3ms)[0m  [1mSELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1[0m  [["url", "https://avvo.com/brain-injury-lawyer/ca.html"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUrl Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "urls" WHERE "urls"."url" = 'https://avvo.com/brain-injury-lawyer/ca.html' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "urls" ("url", "url_type", "domain", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["url", "https://avvo.com/brain-injury-lawyer/ca.html"], ["url_type", "location_specialty"], ["domain", "avvo"], ["created_at", "2018-05-27 01:00:01.381755"], ["updated_at", "2018-05-27 01:00:01.381755"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mUrl Load (0.2ms)[0m  SELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1  [["url", "https://avvo.com/all-lawyers/ca.html"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUrl Exists (0.4ms)[0m  SELECT  1 AS one FROM "urls" WHERE ("urls"."url" = 'https://avvo.com/all-lawyers/ca.html' AND "urls"."id" != 6) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "urls" SET "last_crawled" = $1, "updated_at" = $2 WHERE "urls"."id" = $3[0m  [["last_crawled", "2018-05-27 01:00:01.385410"], ["updated_at", "2018-05-27 01:00:01.387357"], ["id", 6]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36mUrl Load (0.4ms)[0m  [1mSELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1[0m  [["url", "https://avvo.com/business-lawyer/ca.html"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUrl Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "urls" WHERE "urls"."url" = 'https://avvo.com/business-lawyer/ca.html' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "urls" ("url", "url_type", "domain", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["url", "https://avvo.com/business-lawyer/ca.html"], ["url_type", "location_specialty"], ["domain", "avvo"], ["created_at", "2018-05-27 01:00:01.392139"], ["updated_at", "2018-05-27 01:00:01.392139"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mUrl Load (0.2ms)[0m  SELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1  [["url", "https://avvo.com/all-lawyers/ca.html"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUrl Exists (0.4ms)[0m  SELECT  1 AS one FROM "urls" WHERE ("urls"."url" = 'https://avvo.com/all-lawyers/ca.html' AND "urls"."id" != 6) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "urls" SET "last_crawled" = $1, "updated_at" = $2 WHERE "urls"."id" = $3[0m  [["last_crawled", "2018-05-27 01:00:01.394634"], ["updated_at", "2018-05-27 01:00:01.396815"], ["id", 6]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mUrl Load (0.3ms)[0m  [1mSELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1[0m  [["url", "https://avvo.com/car-accidents-lawyer/ca.html"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUrl Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "urls" WHERE "urls"."url" = 'https://avvo.com/car-accidents-lawyer/ca.html' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "urls" ("url", "url_type", "domain", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["url", "https://avvo.com/car-accidents-lawyer/ca.html"], ["url_type", "location_specialty"], ["domain", "avvo"], ["created_at", "2018-05-27 01:00:01.401630"], ["updated_at", "2018-05-27 01:00:01.401630"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mUrl Load (0.2ms)[0m  SELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1  [["url", "https://avvo.com/all-lawyers/ca.html"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUrl Exists (0.6ms)[0m  SELECT  1 AS one FROM "urls" WHERE ("urls"."url" = 'https://avvo.com/all-lawyers/ca.html' AND "urls"."id" != 6) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "urls" SET "last_crawled" = $1, "updated_at" = $2 WHERE "urls"."id" = $3[0m  [["last_crawled", "2018-05-27 01:00:01.404221"], ["updated_at", "2018-05-27 01:00:01.406691"], ["id", 6]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mUrl Load (0.2ms)[0m  [1mSELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1[0m  [["url", "https://avvo.com/child-custody-lawyer/ca.html"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUrl Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "urls" WHERE "urls"."url" = 'https://avvo.com/child-custody-lawyer/ca.html' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "urls" ("url", "url_type", "domain", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["url", "https://avvo.com/child-custody-lawyer/ca.html"], ["url_type", "location_specialty"], ["domain", "avvo"], ["created_at", "2018-05-27 01:00:01.410702"], ["updated_at", "2018-05-27 01:00:01.410702"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mUrl Load (0.2ms)[0m  SELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1  [["url", "https://avvo.com/all-lawyers/ca.html"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUrl Exists (0.5ms)[0m  SELECT  1 AS one FROM "urls" WHERE ("urls"."url" = 'https://avvo.com/all-lawyers/ca.html' AND "urls"."id" != 6) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "urls" SET "last_crawled" = $1, "updated_at" = $2 WHERE "urls"."id" = $3[0m  [["last_crawled", "2018-05-27 01:00:01.413194"], ["updated_at", "2018-05-27 01:00:01.415530"], ["id", 6]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mUrl Load (0.2ms)[0m  [1mSELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1[0m  [["url", "https://avvo.com/child-support-lawyer/ca.html"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUrl Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "urls" WHERE "urls"."url" = 'https://avvo.com/child-support-lawyer/ca.html' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "urls" ("url", "url_type", "domain", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["url", "https://avvo.com/child-support-lawyer/ca.html"], ["url_type", "location_specialty"], ["domain", "avvo"], ["created_at", "2018-05-27 01:00:01.420043"], ["updated_at", "2018-05-27 01:00:01.420043"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mUrl Load (0.2ms)[0m  SELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1  [["url", "https://avvo.com/all-lawyers/ca.html"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUrl Exists (0.4ms)[0m  SELECT  1 AS one FROM "urls" WHERE ("urls"."url" = 'https://avvo.com/all-lawyers/ca.html' AND "urls"."id" != 6) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "urls" SET "last_crawled" = $1, "updated_at" = $2 WHERE "urls"."id" = $3[0m  [["last_crawled", "2018-05-27 01:00:01.422895"], ["updated_at", "2018-05-27 01:00:01.424763"], ["id", 6]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36mUrl Load (0.2ms)[0m  [1mSELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1[0m  [["url", "https://avvo.com/criminal-defense-lawyer/ca.html"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUrl Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "urls" WHERE "urls"."url" = 'https://avvo.com/criminal-defense-lawyer/ca.html' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "urls" ("url", "url_type", "domain", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["url", "https://avvo.com/criminal-defense-lawyer/ca.html"], ["url_type", "location_specialty"], ["domain", "avvo"], ["created_at", "2018-05-27 01:00:01.428808"], ["updated_at", "2018-05-27 01:00:01.428808"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mUrl Load (0.4ms)[0m  SELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1  [["url", "https://avvo.com/all-lawyers/ca.html"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUrl Exists (0.8ms)[0m  SELECT  1 AS one FROM "urls" WHERE ("urls"."url" = 'https://avvo.com/all-lawyers/ca.html' AND "urls"."id" != 6) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "urls" SET "last_crawled" = $1, "updated_at" = $2 WHERE "urls"."id" = $3[0m  [["last_crawled", "2018-05-27 01:00:01.432431"], ["updated_at", "2018-05-27 01:00:01.436547"], ["id", 6]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36mUrl Load (0.4ms)[0m  [1mSELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1[0m  [["url", "https://avvo.com/divorce-separation-lawyer/ca.html"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUrl Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "urls" WHERE "urls"."url" = 'https://avvo.com/divorce-separation-lawyer/ca.html' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "urls" ("url", "url_type", "domain", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["url", "https://avvo.com/divorce-separation-lawyer/ca.html"], ["url_type", "location_specialty"], ["domain", "avvo"], ["created_at", "2018-05-27 01:00:01.442553"], ["updated_at", "2018-05-27 01:00:01.442553"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mUrl Load (0.2ms)[0m  SELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1  [["url", "https://avvo.com/all-lawyers/ca.html"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUrl Exists (0.4ms)[0m  SELECT  1 AS one FROM "urls" WHERE ("urls"."url" = 'https://avvo.com/all-lawyers/ca.html' AND "urls"."id" != 6) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "urls" SET "last_crawled" = $1, "updated_at" = $2 WHERE "urls"."id" = $3[0m  [["last_crawled", "2018-05-27 01:00:01.445002"], ["updated_at", "2018-05-27 01:00:01.446713"], ["id", 6]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mUrl Load (0.3ms)[0m  [1mSELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1[0m  [["url", "https://avvo.com/dui-dwi-lawyer/ca.html"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUrl Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "urls" WHERE "urls"."url" = 'https://avvo.com/dui-dwi-lawyer/ca.html' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "urls" ("url", "url_type", "domain", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["url", "https://avvo.com/dui-dwi-lawyer/ca.html"], ["url_type", "location_specialty"], ["domain", "avvo"], ["created_at", "2018-05-27 01:00:01.451844"], ["updated_at", "2018-05-27 01:00:01.451844"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mUrl Load (0.2ms)[0m  SELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1  [["url", "https://avvo.com/all-lawyers/ca.html"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUrl Exists (0.6ms)[0m  SELECT  1 AS one FROM "urls" WHERE ("urls"."url" = 'https://avvo.com/all-lawyers/ca.html' AND "urls"."id" != 6) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "urls" SET "last_crawled" = $1, "updated_at" = $2 WHERE "urls"."id" = $3[0m  [["last_crawled", "2018-05-27 01:00:01.454264"], ["updated_at", "2018-05-27 01:00:01.456432"], ["id", 6]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36mUrl Load (0.2ms)[0m  [1mSELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1[0m  [["url", "https://avvo.com/employment-labor-lawyer/ca.html"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUrl Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "urls" WHERE "urls"."url" = 'https://avvo.com/employment-labor-lawyer/ca.html' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "urls" ("url", "url_type", "domain", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["url", "https://avvo.com/employment-labor-lawyer/ca.html"], ["url_type", "location_specialty"], ["domain", "avvo"], ["created_at", "2018-05-27 01:00:01.460537"], ["updated_at", "2018-05-27 01:00:01.460537"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mUrl Load (0.2ms)[0m  SELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1  [["url", "https://avvo.com/all-lawyers/ca.html"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUrl Exists (0.5ms)[0m  SELECT  1 AS one FROM "urls" WHERE ("urls"."url" = 'https://avvo.com/all-lawyers/ca.html' AND "urls"."id" != 6) LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "urls" SET "last_crawled" = $1, "updated_at" = $2 WHERE "urls"."id" = $3[0m  [["last_crawled", "2018-05-27 01:00:01.462873"], ["updated_at", "2018-05-27 01:00:01.465288"], ["id", 6]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36mUrl Load (0.3ms)[0m  [1mSELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1[0m  [["url", "https://avvo.com/estate-planning-lawyer/ca.html"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUrl Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "urls" WHERE "urls"."url" = 'https://avvo.com/estate-planning-lawyer/ca.html' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "urls" ("url", "url_type", "domain", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["url", "https://avvo.com/estate-planning-lawyer/ca.html"], ["url_type", "location_specialty"], ["domain", "avvo"], ["created_at", "2018-05-27 01:00:01.469975"], ["updated_at", "2018-05-27 01:00:01.469975"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mUrl Load (0.2ms)[0m  SELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1  [["url", "https://avvo.com/all-lawyers/ca.html"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUrl Exists (0.4ms)[0m  SELECT  1 AS one FROM "urls" WHERE ("urls"."url" = 'https://avvo.com/all-lawyers/ca.html' AND "urls"."id" != 6) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "urls" SET "last_crawled" = $1, "updated_at" = $2 WHERE "urls"."id" = $3[0m  [["last_crawled", "2018-05-27 01:00:01.472577"], ["updated_at", "2018-05-27 01:00:01.474514"], ["id", 6]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36mUrl Load (0.2ms)[0m  [1mSELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1[0m  [["url", "https://avvo.com/family-lawyer/ca.html"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUrl Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "urls" WHERE "urls"."url" = 'https://avvo.com/family-lawyer/ca.html' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "urls" ("url", "url_type", "domain", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["url", "https://avvo.com/family-lawyer/ca.html"], ["url_type", "location_specialty"], ["domain", "avvo"], ["created_at", "2018-05-27 01:00:01.478514"], ["updated_at", "2018-05-27 01:00:01.478514"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mUrl Load (0.3ms)[0m  SELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1  [["url", "https://avvo.com/all-lawyers/ca.html"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUrl Exists (0.5ms)[0m  SELECT  1 AS one FROM "urls" WHERE ("urls"."url" = 'https://avvo.com/all-lawyers/ca.html' AND "urls"."id" != 6) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "urls" SET "last_crawled" = $1, "updated_at" = $2 WHERE "urls"."id" = $3[0m  [["last_crawled", "2018-05-27 01:00:01.481614"], ["updated_at", "2018-05-27 01:00:01.483662"], ["id", 6]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mUrl Load (0.2ms)[0m  [1mSELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1[0m  [["url", "https://avvo.com/foreclosure-lawyer/ca.html"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUrl Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "urls" WHERE "urls"."url" = 'https://avvo.com/foreclosure-lawyer/ca.html' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "urls" ("url", "url_type", "domain", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["url", "https://avvo.com/foreclosure-lawyer/ca.html"], ["url_type", "location_specialty"], ["domain", "avvo"], ["created_at", "2018-05-27 01:00:01.488163"], ["updated_at", "2018-05-27 01:00:01.488163"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mUrl Load (0.2ms)[0m  SELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1  [["url", "https://avvo.com/all-lawyers/ca.html"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUrl Exists (0.4ms)[0m  SELECT  1 AS one FROM "urls" WHERE ("urls"."url" = 'https://avvo.com/all-lawyers/ca.html' AND "urls"."id" != 6) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "urls" SET "last_crawled" = $1, "updated_at" = $2 WHERE "urls"."id" = $3[0m  [["last_crawled", "2018-05-27 01:00:01.490620"], ["updated_at", "2018-05-27 01:00:01.492309"], ["id", 6]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mUrl Load (0.3ms)[0m  [1mSELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1[0m  [["url", "https://avvo.com/immigration-lawyer/ca.html"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUrl Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "urls" WHERE "urls"."url" = 'https://avvo.com/immigration-lawyer/ca.html' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "urls" ("url", "url_type", "domain", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["url", "https://avvo.com/immigration-lawyer/ca.html"], ["url_type", "location_specialty"], ["domain", "avvo"], ["created_at", "2018-05-27 01:00:01.496263"], ["updated_at", "2018-05-27 01:00:01.496263"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mUrl Load (0.2ms)[0m  SELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1  [["url", "https://avvo.com/all-lawyers/ca.html"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUrl Exists (0.5ms)[0m  SELECT  1 AS one FROM "urls" WHERE ("urls"."url" = 'https://avvo.com/all-lawyers/ca.html' AND "urls"."id" != 6) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "urls" SET "last_crawled" = $1, "updated_at" = $2 WHERE "urls"."id" = $3[0m  [["last_crawled", "2018-05-27 01:00:01.498743"], ["updated_at", "2018-05-27 01:00:01.500982"], ["id", 6]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36mUrl Load (0.2ms)[0m  [1mSELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1[0m  [["url", "https://avvo.com/litigation-lawyer/ca.html"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUrl Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "urls" WHERE "urls"."url" = 'https://avvo.com/litigation-lawyer/ca.html' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "urls" ("url", "url_type", "domain", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["url", "https://avvo.com/litigation-lawyer/ca.html"], ["url_type", "location_specialty"], ["domain", "avvo"], ["created_at", "2018-05-27 01:00:01.505289"], ["updated_at", "2018-05-27 01:00:01.505289"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mUrl Load (0.2ms)[0m  SELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1  [["url", "https://avvo.com/all-lawyers/ca.html"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUrl Exists (0.4ms)[0m  SELECT  1 AS one FROM "urls" WHERE ("urls"."url" = 'https://avvo.com/all-lawyers/ca.html' AND "urls"."id" != 6) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "urls" SET "last_crawled" = $1, "updated_at" = $2 WHERE "urls"."id" = $3[0m  [["last_crawled", "2018-05-27 01:00:01.507557"], ["updated_at", "2018-05-27 01:00:01.509190"], ["id", 6]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36mUrl Load (0.3ms)[0m  [1mSELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1[0m  [["url", "https://avvo.com/medical-malpractice-lawyer/ca.html"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUrl Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "urls" WHERE "urls"."url" = 'https://avvo.com/medical-malpractice-lawyer/ca.html' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "urls" ("url", "url_type", "domain", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["url", "https://avvo.com/medical-malpractice-lawyer/ca.html"], ["url_type", "location_specialty"], ["domain", "avvo"], ["created_at", "2018-05-27 01:00:01.513083"], ["updated_at", "2018-05-27 01:00:01.513083"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mUrl Load (0.2ms)[0m  SELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1  [["url", "https://avvo.com/all-lawyers/ca.html"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUrl Exists (0.6ms)[0m  SELECT  1 AS one FROM "urls" WHERE ("urls"."url" = 'https://avvo.com/all-lawyers/ca.html' AND "urls"."id" != 6) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "urls" SET "last_crawled" = $1, "updated_at" = $2 WHERE "urls"."id" = $3[0m  [["last_crawled", "2018-05-27 01:00:01.515434"], ["updated_at", "2018-05-27 01:00:01.517627"], ["id", 6]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36mUrl Load (0.3ms)[0m  [1mSELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1[0m  [["url", "https://avvo.com/mesothelioma-asbestos-lawyer/ca.html"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUrl Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "urls" WHERE "urls"."url" = 'https://avvo.com/mesothelioma-asbestos-lawyer/ca.html' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "urls" ("url", "url_type", "domain", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["url", "https://avvo.com/mesothelioma-asbestos-lawyer/ca.html"], ["url_type", "location_specialty"], ["domain", "avvo"], ["created_at", "2018-05-27 01:00:01.522573"], ["updated_at", "2018-05-27 01:00:01.522573"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mUrl Load (0.2ms)[0m  SELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1  [["url", "https://avvo.com/all-lawyers/ca.html"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUrl Exists (0.6ms)[0m  SELECT  1 AS one FROM "urls" WHERE ("urls"."url" = 'https://avvo.com/all-lawyers/ca.html' AND "urls"."id" != 6) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "urls" SET "last_crawled" = $1, "updated_at" = $2 WHERE "urls"."id" = $3[0m  [["last_crawled", "2018-05-27 01:00:01.525342"], ["updated_at", "2018-05-27 01:00:01.527464"], ["id", 6]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mUrl Load (0.3ms)[0m  [1mSELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1[0m  [["url", "https://avvo.com/motorcycle-accident-lawyer/ca.html"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUrl Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "urls" WHERE "urls"."url" = 'https://avvo.com/motorcycle-accident-lawyer/ca.html' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "urls" ("url", "url_type", "domain", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["url", "https://avvo.com/motorcycle-accident-lawyer/ca.html"], ["url_type", "location_specialty"], ["domain", "avvo"], ["created_at", "2018-05-27 01:00:01.532369"], ["updated_at", "2018-05-27 01:00:01.532369"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mUrl Load (0.2ms)[0m  SELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1  [["url", "https://avvo.com/all-lawyers/ca.html"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUrl Exists (0.4ms)[0m  SELECT  1 AS one FROM "urls" WHERE ("urls"."url" = 'https://avvo.com/all-lawyers/ca.html' AND "urls"."id" != 6) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "urls" SET "last_crawled" = $1, "updated_at" = $2 WHERE "urls"."id" = $3[0m  [["last_crawled", "2018-05-27 01:00:01.535831"], ["updated_at", "2018-05-27 01:00:01.538253"], ["id", 6]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mUrl Load (0.3ms)[0m  [1mSELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1[0m  [["url", "https://avvo.com/personal-injury-lawyer/ca.html"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUrl Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "urls" WHERE "urls"."url" = 'https://avvo.com/personal-injury-lawyer/ca.html' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "urls" ("url", "url_type", "domain", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["url", "https://avvo.com/personal-injury-lawyer/ca.html"], ["url_type", "location_specialty"], ["domain", "avvo"], ["created_at", "2018-05-27 01:00:01.542833"], ["updated_at", "2018-05-27 01:00:01.542833"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mUrl Load (0.2ms)[0m  SELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1  [["url", "https://avvo.com/all-lawyers/ca.html"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUrl Exists (0.4ms)[0m  SELECT  1 AS one FROM "urls" WHERE ("urls"."url" = 'https://avvo.com/all-lawyers/ca.html' AND "urls"."id" != 6) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "urls" SET "last_crawled" = $1, "updated_at" = $2 WHERE "urls"."id" = $3[0m  [["last_crawled", "2018-05-27 01:00:01.545590"], ["updated_at", "2018-05-27 01:00:01.547540"], ["id", 6]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36mUrl Load (0.4ms)[0m  [1mSELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1[0m  [["url", "https://avvo.com/probate-lawyer/ca.html"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUrl Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "urls" WHERE "urls"."url" = 'https://avvo.com/probate-lawyer/ca.html' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "urls" ("url", "url_type", "domain", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["url", "https://avvo.com/probate-lawyer/ca.html"], ["url_type", "location_specialty"], ["domain", "avvo"], ["created_at", "2018-05-27 01:00:01.554215"], ["updated_at", "2018-05-27 01:00:01.554215"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mUrl Load (0.2ms)[0m  SELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1  [["url", "https://avvo.com/all-lawyers/ca.html"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUrl Exists (0.5ms)[0m  SELECT  1 AS one FROM "urls" WHERE ("urls"."url" = 'https://avvo.com/all-lawyers/ca.html' AND "urls"."id" != 6) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "urls" SET "last_crawled" = $1, "updated_at" = $2 WHERE "urls"."id" = $3[0m  [["last_crawled", "2018-05-27 01:00:01.556855"], ["updated_at", "2018-05-27 01:00:01.558967"], ["id", 6]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mUrl Load (0.2ms)[0m  [1mSELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1[0m  [["url", "https://avvo.com/real-estate-lawyer/ca.html"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUrl Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "urls" WHERE "urls"."url" = 'https://avvo.com/real-estate-lawyer/ca.html' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "urls" ("url", "url_type", "domain", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["url", "https://avvo.com/real-estate-lawyer/ca.html"], ["url_type", "location_specialty"], ["domain", "avvo"], ["created_at", "2018-05-27 01:00:01.563156"], ["updated_at", "2018-05-27 01:00:01.563156"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mUrl Load (0.3ms)[0m  SELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1  [["url", "https://avvo.com/all-lawyers/ca.html"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUrl Exists (0.5ms)[0m  SELECT  1 AS one FROM "urls" WHERE ("urls"."url" = 'https://avvo.com/all-lawyers/ca.html' AND "urls"."id" != 6) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "urls" SET "last_crawled" = $1, "updated_at" = $2 WHERE "urls"."id" = $3[0m  [["last_crawled", "2018-05-27 01:00:01.567094"], ["updated_at", "2018-05-27 01:00:01.569200"], ["id", 6]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mUrl Load (0.3ms)[0m  [1mSELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1[0m  [["url", "https://avvo.com/social-security-lawyer/ca.html"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUrl Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "urls" WHERE "urls"."url" = 'https://avvo.com/social-security-lawyer/ca.html' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "urls" ("url", "url_type", "domain", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["url", "https://avvo.com/social-security-lawyer/ca.html"], ["url_type", "location_specialty"], ["domain", "avvo"], ["created_at", "2018-05-27 01:00:01.574080"], ["updated_at", "2018-05-27 01:00:01.574080"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mUrl Load (0.2ms)[0m  SELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1  [["url", "https://avvo.com/all-lawyers/ca.html"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUrl Exists (0.4ms)[0m  SELECT  1 AS one FROM "urls" WHERE ("urls"."url" = 'https://avvo.com/all-lawyers/ca.html' AND "urls"."id" != 6) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "urls" SET "last_crawled" = $1, "updated_at" = $2 WHERE "urls"."id" = $3[0m  [["last_crawled", "2018-05-27 01:00:01.576493"], ["updated_at", "2018-05-27 01:00:01.578084"], ["id", 6]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36mUrl Load (0.2ms)[0m  [1mSELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1[0m  [["url", "https://avvo.com/speeding-traffic-ticket-lawyer/ca.html"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUrl Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "urls" WHERE "urls"."url" = 'https://avvo.com/speeding-traffic-ticket-lawyer/ca.html' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "urls" ("url", "url_type", "domain", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["url", "https://avvo.com/speeding-traffic-ticket-lawyer/ca.html"], ["url_type", "location_specialty"], ["domain", "avvo"], ["created_at", "2018-05-27 01:00:01.582303"], ["updated_at", "2018-05-27 01:00:01.582303"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mUrl Load (0.2ms)[0m  SELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1  [["url", "https://avvo.com/all-lawyers/ca.html"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUrl Exists (0.9ms)[0m  SELECT  1 AS one FROM "urls" WHERE ("urls"."url" = 'https://avvo.com/all-lawyers/ca.html' AND "urls"."id" != 6) LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "urls" SET "last_crawled" = $1, "updated_at" = $2 WHERE "urls"."id" = $3[0m  [["last_crawled", "2018-05-27 01:00:01.586272"], ["updated_at", "2018-05-27 01:00:01.589681"], ["id", 6]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36mUrl Load (0.3ms)[0m  [1mSELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1[0m  [["url", "https://avvo.com/tax-lawyer/ca.html"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUrl Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "urls" WHERE "urls"."url" = 'https://avvo.com/tax-lawyer/ca.html' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "urls" ("url", "url_type", "domain", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["url", "https://avvo.com/tax-lawyer/ca.html"], ["url_type", "location_specialty"], ["domain", "avvo"], ["created_at", "2018-05-27 01:00:01.595227"], ["updated_at", "2018-05-27 01:00:01.595227"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mUrl Load (0.2ms)[0m  SELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1  [["url", "https://avvo.com/all-lawyers/ca.html"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUrl Exists (0.6ms)[0m  SELECT  1 AS one FROM "urls" WHERE ("urls"."url" = 'https://avvo.com/all-lawyers/ca.html' AND "urls"."id" != 6) LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE "urls" SET "last_crawled" = $1, "updated_at" = $2 WHERE "urls"."id" = $3[0m  [["last_crawled", "2018-05-27 01:00:01.597650"], ["updated_at", "2018-05-27 01:00:01.599902"], ["id", 6]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36mUrl Load (0.3ms)[0m  [1mSELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1[0m  [["url", "https://avvo.com/trucking-accident-lawyer/ca.html"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUrl Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "urls" WHERE "urls"."url" = 'https://avvo.com/trucking-accident-lawyer/ca.html' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "urls" ("url", "url_type", "domain", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["url", "https://avvo.com/trucking-accident-lawyer/ca.html"], ["url_type", "location_specialty"], ["domain", "avvo"], ["created_at", "2018-05-27 01:00:01.606373"], ["updated_at", "2018-05-27 01:00:01.606373"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mUrl Load (0.2ms)[0m  SELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1  [["url", "https://avvo.com/all-lawyers/ca.html"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUrl Exists (0.4ms)[0m  SELECT  1 AS one FROM "urls" WHERE ("urls"."url" = 'https://avvo.com/all-lawyers/ca.html' AND "urls"."id" != 6) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "urls" SET "last_crawled" = $1, "updated_at" = $2 WHERE "urls"."id" = $3[0m  [["last_crawled", "2018-05-27 01:00:01.608852"], ["updated_at", "2018-05-27 01:00:01.610531"], ["id", 6]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36mUrl Load (0.2ms)[0m  [1mSELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1[0m  [["url", "https://avvo.com/workers-compensation-lawyer/ca.html"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUrl Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "urls" WHERE "urls"."url" = 'https://avvo.com/workers-compensation-lawyer/ca.html' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "urls" ("url", "url_type", "domain", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["url", "https://avvo.com/workers-compensation-lawyer/ca.html"], ["url_type", "location_specialty"], ["domain", "avvo"], ["created_at", "2018-05-27 01:00:01.614944"], ["updated_at", "2018-05-27 01:00:01.614944"]]
+  [1m[36m (1.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mUrl Load (0.4ms)[0m  SELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1  [["url", "https://avvo.com/all-lawyers/ca.html"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUrl Exists (0.8ms)[0m  SELECT  1 AS one FROM "urls" WHERE ("urls"."url" = 'https://avvo.com/all-lawyers/ca.html' AND "urls"."id" != 6) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "urls" SET "last_crawled" = $1, "updated_at" = $2 WHERE "urls"."id" = $3[0m  [["last_crawled", "2018-05-27 01:00:01.619346"], ["updated_at", "2018-05-27 01:00:01.622321"], ["id", 6]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mUrl Load (0.4ms)[0m  [1mSELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1[0m  [["url", "https://avvo.com/wrongful-termination-lawyer/ca.html"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUrl Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "urls" WHERE "urls"."url" = 'https://avvo.com/wrongful-termination-lawyer/ca.html' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "urls" ("url", "url_type", "domain", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["url", "https://avvo.com/wrongful-termination-lawyer/ca.html"], ["url_type", "location_specialty"], ["domain", "avvo"], ["created_at", "2018-05-27 01:00:01.628135"], ["updated_at", "2018-05-27 01:00:01.628135"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mUrl Load (0.2ms)[0m  SELECT  "urls".* FROM "urls" WHERE "urls"."url" = $1 LIMIT 1  [["url", "https://avvo.com/all-lawyers/ca.html"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUrl Exists (0.4ms)[0m  SELECT  1 AS one FROM "urls" WHERE ("urls"."url" = 'https://avvo.com/all-lawyers/ca.html' AND "urls"."id" != 6) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "urls" SET "last_crawled" = $1, "updated_at" = $2 WHERE "urls"."id" = $3[0m  [["last_crawled", "2018-05-27 01:00:01.630764"], ["updated_at", "2018-05-27 01:00:01.632460"], ["id", 6]]
+  [1m[35m (0.4ms)[0m  COMMIT
