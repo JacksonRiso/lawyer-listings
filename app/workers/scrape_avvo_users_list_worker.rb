@@ -14,7 +14,7 @@ class ScrapeAvvoUsersListWorker
     page.css('.serp-pagination').css("a").each do |specialty|
       link = "https://avvo.com" + specialty["href"]
       unless Url.find_by(url: link)
-        Url.create(url: link, url_type: "user", domain: "avvo")
+        Url.create(url: link, url_type: "lawyer_specialty", domain: "avvo")
       end
     end
 
@@ -22,7 +22,7 @@ class ScrapeAvvoUsersListWorker
     page.css('.lawyer-search-results').css(".v-serp-block-link").each do |lawyer|
       link = "https://avvo.com" + lawyer["href"]
       unless Url.find_by(url: link)
-        Url.create(url: link, url_type: "lawyer", domain: "avvo")
+        Url.create(url: link, url_type: "user", domain: "avvo")
       end
     end
 
