@@ -12,7 +12,7 @@ namespace :avvo_scraper do
       when 'location_specialty'
         ScrapeAvvoUsersListWorker.perform_in(time, url.url)
       when 'user'
-        ScrapeAvvoUserPageWorker.perform_async(time, url.url)
+        ScrapeAvvoUserPageWorker.perform_in(time, url.url)
       else
         puts "This is a failure!"
         puts url.url_type
