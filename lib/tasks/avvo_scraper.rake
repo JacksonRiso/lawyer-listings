@@ -1,7 +1,7 @@
 namespace :avvo_scraper do
   desc 'Pick the top 10 unscraped URLs and scrape them'
   task schedule_scrapes: :environment do
-    Url.where(last_crawled: nil, domain: "avvo").limit(5).each_with_index do |url, index|
+    Url.where(last_crawled: nil, domain: "avvo").limit(10).each_with_index do |url, index|
       url.update(last_crawled: Time.at(628232400))
       time = (index + 1).minutes
       case url.url_type
