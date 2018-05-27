@@ -12,8 +12,8 @@ class ScrapeAvvoLocationListWorker
     page = Nokogiri::HTML(open(url, 'User-Agent' => 'firefox'))
     page.css('#js-top-state-link-farm').css("ol.unstyled-list").css("li").each do |state|
     	link = "https://avvo.com" + state.css("a")[0]["href"]
-      unless URL.find_by(url: link)
-        Url.create(url: link, url_type: "location", domain: "Avvo")
+      unless Url.find_by(url: link)
+        Url.create(url: link, url_type: "location", domain: "avvo")
       end
 
       ##Update the current url

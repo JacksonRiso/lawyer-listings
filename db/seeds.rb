@@ -5,3 +5,5 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+first_avvo_url = Url.create(url: "https://www.avvo.com/find-a-lawyer", domain: "avvo", url_type: "location_list")
