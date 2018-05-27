@@ -11,6 +11,7 @@ class ScrapeAvvoUserPageWorker
     puts "AAAAAAAAA"
     puts url
     puts "AAAAAAAAA"
+    
     page = Nokogiri::HTML(open(url, 'User-Agent' => 'firefox'))
 
     name = page.css('.v-lawyer-card').css('h1').text
