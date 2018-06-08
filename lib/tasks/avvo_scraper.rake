@@ -1,8 +1,8 @@
 namespace :avvo_scraper do
   desc 'Pick the top 10 unscraped URLs and scrape them'
   task schedule_scrapes: :environment do
-    Url.where(last_crawled: nil, domain: "avvo").limit(5).each_with_index do |url, index|
-      url.update(last_crawled: Time.at(628232400))
+    Url.where(last_crawled: nil, domain: 'avvo').limit(5).each_with_index do |url, index|
+      url.update(last_crawled: Time.at(628_232_400))
       time = (index + 1).minutes
       case url.url_type
       when 'location_list'
@@ -14,9 +14,10 @@ namespace :avvo_scraper do
       when 'user'
         ScrapeAvvoUserPageWorker.perform_in(time, url.url)
       else
-        puts "This is a failure!"
+        puts 'This is a failure!'
+        puts url
         puts url.url_type
-        puts "This is a failure!"
+        puts 'This is a failure!'
       end
     end
   end
