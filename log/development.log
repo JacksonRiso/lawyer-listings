@@ -4246,3 +4246,303 @@ ORDER BY c.conname
   [1m[35mStock Exists (1.5ms)[0m  SELECT  1 AS one FROM "stocks" WHERE "stocks"."symbol" = 'EAPH' LIMIT 1
   [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "stocks" ("symbol", "source", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["symbol", "EAPH"], ["source", "http://www.allpennystocks.com/aps_us/hot_otc_stocks.asp"], ["created_at", "2018-06-08 20:59:46.926059"], ["updated_at", "2018-06-08 20:59:46.926059"]]
   [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mStock Load (8.7ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1[0m  [["symbol", "MGYOY"]]
+  [1m[35m (29.2ms)[0m  BEGIN
+  [1m[36mStock Exists (1.9ms)[0m  [1mSELECT  1 AS one FROM "stocks" WHERE "stocks"."symbol" = 'MGYOY' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "stocks" ("symbol", "source", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["symbol", "MGYOY"], ["source", "https://finance.yahoo.com/gainers"], ["created_at", "2018-06-08 21:09:12.151860"], ["updated_at", "2018-06-08 21:09:12.151860"]]
+  [1m[36m (1.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mStock Load (0.3ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1  [["symbol", "SFIX"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mStock Exists (0.5ms)[0m  SELECT  1 AS one FROM "stocks" WHERE "stocks"."symbol" = 'SFIX' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "stocks" ("symbol", "source", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["symbol", "SFIX"], ["source", "https://finance.yahoo.com/gainers"], ["created_at", "2018-06-08 21:09:12.160362"], ["updated_at", "2018-06-08 21:09:12.160362"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1[0m  [["symbol", "FANH"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mStock Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "stocks" WHERE "stocks"."symbol" = 'FANH' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "stocks" ("symbol", "source", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["symbol", "FANH"], ["source", "https://finance.yahoo.com/gainers"], ["created_at", "2018-06-08 21:09:12.165744"], ["updated_at", "2018-06-08 21:09:12.165744"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mStock Load (0.2ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1  [["symbol", "BILI"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mStock Exists (0.4ms)[0m  SELECT  1 AS one FROM "stocks" WHERE "stocks"."symbol" = 'BILI' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "stocks" ("symbol", "source", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["symbol", "BILI"], ["source", "https://finance.yahoo.com/gainers"], ["created_at", "2018-06-08 21:09:12.170961"], ["updated_at", "2018-06-08 21:09:12.170961"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1[0m  [["symbol", "HUYA"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mStock Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "stocks" WHERE "stocks"."symbol" = 'HUYA' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "stocks" ("symbol", "source", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["symbol", "HUYA"], ["source", "https://finance.yahoo.com/gainers"], ["created_at", "2018-06-08 21:09:12.175874"], ["updated_at", "2018-06-08 21:09:12.175874"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mStock Load (0.2ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1  [["symbol", "KROTY"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mStock Exists (0.4ms)[0m  SELECT  1 AS one FROM "stocks" WHERE "stocks"."symbol" = 'KROTY' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "stocks" ("symbol", "source", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["symbol", "KROTY"], ["source", "https://finance.yahoo.com/gainers"], ["created_at", "2018-06-08 21:09:12.180814"], ["updated_at", "2018-06-08 21:09:12.180814"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1[0m  [["symbol", "LZRFY"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mStock Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "stocks" WHERE "stocks"."symbol" = 'LZRFY' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "stocks" ("symbol", "source", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["symbol", "LZRFY"], ["source", "https://finance.yahoo.com/gainers"], ["created_at", "2018-06-08 21:09:12.185549"], ["updated_at", "2018-06-08 21:09:12.185549"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mStock Load (0.2ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1  [["symbol", "BBSEY"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mStock Exists (0.3ms)[0m  SELECT  1 AS one FROM "stocks" WHERE "stocks"."symbol" = 'BBSEY' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "stocks" ("symbol", "source", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["symbol", "BBSEY"], ["source", "https://finance.yahoo.com/gainers"], ["created_at", "2018-06-08 21:09:12.190225"], ["updated_at", "2018-06-08 21:09:12.190225"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1[0m  [["symbol", "USNZY"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mStock Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "stocks" WHERE "stocks"."symbol" = 'USNZY' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "stocks" ("symbol", "source", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["symbol", "USNZY"], ["source", "https://finance.yahoo.com/gainers"], ["created_at", "2018-06-08 21:09:12.194907"], ["updated_at", "2018-06-08 21:09:12.194907"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mStock Load (0.2ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1  [["symbol", "HCM"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mStock Exists (0.4ms)[0m  SELECT  1 AS one FROM "stocks" WHERE "stocks"."symbol" = 'HCM' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "stocks" ("symbol", "source", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["symbol", "HCM"], ["source", "https://finance.yahoo.com/gainers"], ["created_at", "2018-06-08 21:09:12.199662"], ["updated_at", "2018-06-08 21:09:12.199662"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mStock Load (0.3ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1[0m  [["symbol", "JBSAY"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mStock Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "stocks" WHERE "stocks"."symbol" = 'JBSAY' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "stocks" ("symbol", "source", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["symbol", "JBSAY"], ["source", "https://finance.yahoo.com/gainers"], ["created_at", "2018-06-08 21:09:12.204499"], ["updated_at", "2018-06-08 21:09:12.204499"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mStock Load (0.2ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1  [["symbol", "ATDRY"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mStock Exists (0.3ms)[0m  SELECT  1 AS one FROM "stocks" WHERE "stocks"."symbol" = 'ATDRY' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "stocks" ("symbol", "source", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["symbol", "ATDRY"], ["source", "https://finance.yahoo.com/gainers"], ["created_at", "2018-06-08 21:09:12.209275"], ["updated_at", "2018-06-08 21:09:12.209275"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1[0m  [["symbol", "CWH"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mStock Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "stocks" WHERE "stocks"."symbol" = 'CWH' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "stocks" ("symbol", "source", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["symbol", "CWH"], ["source", "https://finance.yahoo.com/gainers"], ["created_at", "2018-06-08 21:09:12.213764"], ["updated_at", "2018-06-08 21:09:12.213764"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mStock Load (0.2ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1  [["symbol", "ZS"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mStock Exists (0.4ms)[0m  SELECT  1 AS one FROM "stocks" WHERE "stocks"."symbol" = 'ZS' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "stocks" ("symbol", "source", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["symbol", "ZS"], ["source", "https://finance.yahoo.com/gainers"], ["created_at", "2018-06-08 21:09:12.218534"], ["updated_at", "2018-06-08 21:09:12.218534"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1[0m  [["symbol", "BFLBF"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mStock Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "stocks" WHERE "stocks"."symbol" = 'BFLBF' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "stocks" ("symbol", "source", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["symbol", "BFLBF"], ["source", "https://finance.yahoo.com/gainers"], ["created_at", "2018-06-08 21:09:12.223182"], ["updated_at", "2018-06-08 21:09:12.223182"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mStock Load (0.2ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1  [["symbol", "CPL"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mStock Exists (0.3ms)[0m  SELECT  1 AS one FROM "stocks" WHERE "stocks"."symbol" = 'CPL' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "stocks" ("symbol", "source", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["symbol", "CPL"], ["source", "https://finance.yahoo.com/gainers"], ["created_at", "2018-06-08 21:09:12.227925"], ["updated_at", "2018-06-08 21:09:12.227925"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1[0m  [["symbol", "UGP"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mStock Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "stocks" WHERE "stocks"."symbol" = 'UGP' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "stocks" ("symbol", "source", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["symbol", "UGP"], ["source", "https://finance.yahoo.com/gainers"], ["created_at", "2018-06-08 21:09:12.232552"], ["updated_at", "2018-06-08 21:09:12.232552"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mStock Load (0.2ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1  [["symbol", "LX"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mStock Exists (3.6ms)[0m  SELECT  1 AS one FROM "stocks" WHERE "stocks"."symbol" = 'LX' LIMIT 1
+  [1m[36mSQL (5.3ms)[0m  [1mINSERT INTO "stocks" ("symbol", "source", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["symbol", "LX"], ["source", "https://finance.yahoo.com/gainers"], ["created_at", "2018-06-08 21:09:12.240356"], ["updated_at", "2018-06-08 21:09:12.240356"]]
+  [1m[35m (3.0ms)[0m  COMMIT
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1[0m  [["symbol", "IQ"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mStock Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "stocks" WHERE "stocks"."symbol" = 'IQ' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "stocks" ("symbol", "source", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["symbol", "IQ"], ["source", "https://finance.yahoo.com/gainers"], ["created_at", "2018-06-08 21:09:12.253341"], ["updated_at", "2018-06-08 21:09:12.253341"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mStock Load (0.3ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1  [["symbol", "BDORY"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mStock Exists (0.4ms)[0m  SELECT  1 AS one FROM "stocks" WHERE "stocks"."symbol" = 'BDORY' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "stocks" ("symbol", "source", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["symbol", "BDORY"], ["source", "https://finance.yahoo.com/gainers"], ["created_at", "2018-06-08 21:09:12.258195"], ["updated_at", "2018-06-08 21:09:12.258195"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1[0m  [["symbol", "ICPT"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mStock Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "stocks" WHERE "stocks"."symbol" = 'ICPT' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "stocks" ("symbol", "source", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["symbol", "ICPT"], ["source", "https://finance.yahoo.com/gainers"], ["created_at", "2018-06-08 21:09:12.263050"], ["updated_at", "2018-06-08 21:09:12.263050"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mStock Load (0.2ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1  [["symbol", "CIOXY"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mStock Exists (0.4ms)[0m  SELECT  1 AS one FROM "stocks" WHERE "stocks"."symbol" = 'CIOXY' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "stocks" ("symbol", "source", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["symbol", "CIOXY"], ["source", "https://finance.yahoo.com/gainers"], ["created_at", "2018-06-08 21:09:12.267897"], ["updated_at", "2018-06-08 21:09:12.267897"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1[0m  [["symbol", "ECPCY"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mStock Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "stocks" WHERE "stocks"."symbol" = 'ECPCY' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "stocks" ("symbol", "source", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["symbol", "ECPCY"], ["source", "https://finance.yahoo.com/gainers"], ["created_at", "2018-06-08 21:09:12.272995"], ["updated_at", "2018-06-08 21:09:12.272995"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mStock Load (0.2ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1  [["symbol", "HOME"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mStock Exists (0.3ms)[0m  SELECT  1 AS one FROM "stocks" WHERE "stocks"."symbol" = 'HOME' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "stocks" ("symbol", "source", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["symbol", "HOME"], ["source", "https://finance.yahoo.com/gainers"], ["created_at", "2018-06-08 21:09:12.277640"], ["updated_at", "2018-06-08 21:09:12.277640"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1[0m  [["symbol", "AZUL"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mStock Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "stocks" WHERE "stocks"."symbol" = 'AZUL' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "stocks" ("symbol", "source", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["symbol", "AZUL"], ["source", "https://finance.yahoo.com/gainers"], ["created_at", "2018-06-08 21:09:12.281868"], ["updated_at", "2018-06-08 21:09:12.281868"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mStock Load (0.4ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1  [["symbol", "NTXFF"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mStock Exists (0.4ms)[0m  SELECT  1 AS one FROM "stocks" WHERE "stocks"."symbol" = 'NTXFF' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "stocks" ("symbol", "source", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["symbol", "NTXFF"], ["source", "https://finance.yahoo.com/losers"], ["created_at", "2018-06-08 21:09:13.110986"], ["updated_at", "2018-06-08 21:09:13.110986"]]
+  [1m[35m (1.8ms)[0m  COMMIT
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1[0m  [["symbol", "RES"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mStock Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "stocks" WHERE "stocks"."symbol" = 'RES' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "stocks" ("symbol", "source", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["symbol", "RES"], ["source", "https://finance.yahoo.com/losers"], ["created_at", "2018-06-08 21:09:13.118020"], ["updated_at", "2018-06-08 21:09:13.118020"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mStock Load (0.2ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1  [["symbol", "LBRT"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mStock Exists (1.5ms)[0m  SELECT  1 AS one FROM "stocks" WHERE "stocks"."symbol" = 'LBRT' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "stocks" ("symbol", "source", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["symbol", "LBRT"], ["source", "https://finance.yahoo.com/losers"], ["created_at", "2018-06-08 21:09:13.127484"], ["updated_at", "2018-06-08 21:09:13.127484"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1[0m  [["symbol", "SFUN"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mStock Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "stocks" WHERE "stocks"."symbol" = 'SFUN' LIMIT 1[0m
+  [1m[35mSQL (1.7ms)[0m  INSERT INTO "stocks" ("symbol", "source", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["symbol", "SFUN"], ["source", "https://finance.yahoo.com/losers"], ["created_at", "2018-06-08 21:09:13.133614"], ["updated_at", "2018-06-08 21:09:13.133614"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mStock Load (2.4ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1  [["symbol", "SCVUF"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mStock Exists (0.4ms)[0m  SELECT  1 AS one FROM "stocks" WHERE "stocks"."symbol" = 'SCVUF' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "stocks" ("symbol", "source", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["symbol", "SCVUF"], ["source", "https://finance.yahoo.com/losers"], ["created_at", "2018-06-08 21:09:13.143631"], ["updated_at", "2018-06-08 21:09:13.143631"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1[0m  [["symbol", "MKSI"]]
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mStock Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "stocks" WHERE "stocks"."symbol" = 'MKSI' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "stocks" ("symbol", "source", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["symbol", "MKSI"], ["source", "https://finance.yahoo.com/losers"], ["created_at", "2018-06-08 21:09:13.149934"], ["updated_at", "2018-06-08 21:09:13.149934"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mStock Load (0.2ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1  [["symbol", "INCZY"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mStock Exists (2.4ms)[0m  SELECT  1 AS one FROM "stocks" WHERE "stocks"."symbol" = 'INCZY' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "stocks" ("symbol", "source", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["symbol", "INCZY"], ["source", "https://finance.yahoo.com/losers"], ["created_at", "2018-06-08 21:09:13.158045"], ["updated_at", "2018-06-08 21:09:13.158045"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1[0m  [["symbol", "PTEN"]]
+  [1m[35m (6.0ms)[0m  BEGIN
+  [1m[36mStock Exists (30.8ms)[0m  [1mSELECT  1 AS one FROM "stocks" WHERE "stocks"."symbol" = 'PTEN' LIMIT 1[0m
+  [1m[35mSQL (18.8ms)[0m  INSERT INTO "stocks" ("symbol", "source", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["symbol", "PTEN"], ["source", "https://finance.yahoo.com/losers"], ["created_at", "2018-06-08 21:09:13.200798"], ["updated_at", "2018-06-08 21:09:13.200798"]]
+  [1m[36m (21.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mStock Load (9.5ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1  [["symbol", "IMMU"]]
+  [1m[36m (11.7ms)[0m  [1mBEGIN[0m
+  [1m[35mStock Exists (2.6ms)[0m  SELECT  1 AS one FROM "stocks" WHERE "stocks"."symbol" = 'IMMU' LIMIT 1
+  [1m[36mSQL (14.6ms)[0m  [1mINSERT INTO "stocks" ("symbol", "source", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["symbol", "IMMU"], ["source", "https://finance.yahoo.com/losers"], ["created_at", "2018-06-08 21:09:13.268770"], ["updated_at", "2018-06-08 21:09:13.268770"]]
+  [1m[35m (15.8ms)[0m  COMMIT
+  [1m[36mStock Load (0.3ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1[0m  [["symbol", "IITSF"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mStock Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "stocks" WHERE "stocks"."symbol" = 'IITSF' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "stocks" ("symbol", "source", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["symbol", "IITSF"], ["source", "https://finance.yahoo.com/losers"], ["created_at", "2018-06-08 21:09:13.304196"], ["updated_at", "2018-06-08 21:09:13.304196"]]
+  [1m[36m (5.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mStock Load (0.3ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1  [["symbol", "WTTR"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mStock Exists (0.4ms)[0m  SELECT  1 AS one FROM "stocks" WHERE "stocks"."symbol" = 'WTTR' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "stocks" ("symbol", "source", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["symbol", "WTTR"], ["source", "https://finance.yahoo.com/losers"], ["created_at", "2018-06-08 21:09:13.314553"], ["updated_at", "2018-06-08 21:09:13.314553"]]
+  [1m[35m (1.3ms)[0m  COMMIT
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1[0m  [["symbol", "CEQP"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mStock Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "stocks" WHERE "stocks"."symbol" = 'CEQP' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "stocks" ("symbol", "source", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["symbol", "CEQP"], ["source", "https://finance.yahoo.com/losers"], ["created_at", "2018-06-08 21:09:13.320608"], ["updated_at", "2018-06-08 21:09:13.320608"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mStock Load (10.9ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1  [["symbol", "NBR"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mStock Exists (0.6ms)[0m  SELECT  1 AS one FROM "stocks" WHERE "stocks"."symbol" = 'NBR' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "stocks" ("symbol", "source", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["symbol", "NBR"], ["source", "https://finance.yahoo.com/losers"], ["created_at", "2018-06-08 21:09:13.336667"], ["updated_at", "2018-06-08 21:09:13.336667"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mStock Load (0.4ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1[0m  [["symbol", "BPMP"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mStock Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "stocks" WHERE "stocks"."symbol" = 'BPMP' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "stocks" ("symbol", "source", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["symbol", "BPMP"], ["source", "https://finance.yahoo.com/losers"], ["created_at", "2018-06-08 21:09:13.342315"], ["updated_at", "2018-06-08 21:09:13.342315"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mStock Load (0.2ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1  [["symbol", "NEXA"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mStock Exists (0.5ms)[0m  SELECT  1 AS one FROM "stocks" WHERE "stocks"."symbol" = 'NEXA' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "stocks" ("symbol", "source", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["symbol", "NEXA"], ["source", "https://finance.yahoo.com/losers"], ["created_at", "2018-06-08 21:09:13.348063"], ["updated_at", "2018-06-08 21:09:13.348063"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1[0m  [["symbol", "HOKCY"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mStock Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "stocks" WHERE "stocks"."symbol" = 'HOKCY' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "stocks" ("symbol", "source", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["symbol", "HOKCY"], ["source", "https://finance.yahoo.com/losers"], ["created_at", "2018-06-08 21:09:13.353428"], ["updated_at", "2018-06-08 21:09:13.353428"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mStock Load (0.3ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1  [["symbol", "CQP"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mStock Exists (0.4ms)[0m  SELECT  1 AS one FROM "stocks" WHERE "stocks"."symbol" = 'CQP' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "stocks" ("symbol", "source", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["symbol", "CQP"], ["source", "https://finance.yahoo.com/losers"], ["created_at", "2018-06-08 21:09:13.359328"], ["updated_at", "2018-06-08 21:09:13.359328"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mStock Load (0.4ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1[0m  [["symbol", "DPSGY"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mStock Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "stocks" WHERE "stocks"."symbol" = 'DPSGY' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "stocks" ("symbol", "source", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["symbol", "DPSGY"], ["source", "https://finance.yahoo.com/losers"], ["created_at", "2018-06-08 21:09:13.365472"], ["updated_at", "2018-06-08 21:09:13.365472"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mStock Load (0.2ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1  [["symbol", "AEIS"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mStock Exists (0.4ms)[0m  SELECT  1 AS one FROM "stocks" WHERE "stocks"."symbol" = 'AEIS' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "stocks" ("symbol", "source", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["symbol", "AEIS"], ["source", "https://finance.yahoo.com/losers"], ["created_at", "2018-06-08 21:09:13.370988"], ["updated_at", "2018-06-08 21:09:13.370988"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mStock Load (0.3ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1[0m  [["symbol", "PPERY"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mStock Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "stocks" WHERE "stocks"."symbol" = 'PPERY' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "stocks" ("symbol", "source", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["symbol", "PPERY"], ["source", "https://finance.yahoo.com/losers"], ["created_at", "2018-06-08 21:09:13.376756"], ["updated_at", "2018-06-08 21:09:13.376756"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mStock Load (0.3ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1  [["symbol", "QD"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mStock Exists (0.4ms)[0m  SELECT  1 AS one FROM "stocks" WHERE "stocks"."symbol" = 'QD' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "stocks" ("symbol", "source", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["symbol", "QD"], ["source", "https://finance.yahoo.com/losers"], ["created_at", "2018-06-08 21:09:13.383031"], ["updated_at", "2018-06-08 21:09:13.383031"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mStock Load (0.3ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1[0m  [["symbol", "WYND-WI"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mStock Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "stocks" WHERE "stocks"."symbol" = 'WYND-WI' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "stocks" ("symbol", "source", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["symbol", "WYND-WI"], ["source", "https://finance.yahoo.com/losers"], ["created_at", "2018-06-08 21:09:13.388788"], ["updated_at", "2018-06-08 21:09:13.388788"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mStock Load (0.3ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1  [["symbol", "GBT"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mStock Exists (0.9ms)[0m  SELECT  1 AS one FROM "stocks" WHERE "stocks"."symbol" = 'GBT' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "stocks" ("symbol", "source", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["symbol", "GBT"], ["source", "https://finance.yahoo.com/losers"], ["created_at", "2018-06-08 21:09:13.395091"], ["updated_at", "2018-06-08 21:09:13.395091"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1[0m  [["symbol", "PENN"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mStock Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "stocks" WHERE "stocks"."symbol" = 'PENN' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "stocks" ("symbol", "source", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["symbol", "PENN"], ["source", "https://finance.yahoo.com/losers"], ["created_at", "2018-06-08 21:09:13.400369"], ["updated_at", "2018-06-08 21:09:13.400369"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mStock Load (0.3ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1  [["symbol", "CLVS"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mStock Exists (0.4ms)[0m  SELECT  1 AS one FROM "stocks" WHERE "stocks"."symbol" = 'CLVS' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "stocks" ("symbol", "source", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["symbol", "CLVS"], ["source", "https://finance.yahoo.com/losers"], ["created_at", "2018-06-08 21:09:13.406122"], ["updated_at", "2018-06-08 21:09:13.406122"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mStock Load (22.8ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1[0m  [["symbol", "MGYOY"]]
+  [1m[35mStock Load (2.8ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1  [["symbol", "SFIX"]]
+  [1m[36mStock Load (5.8ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1[0m  [["symbol", "FANH"]]
+  [1m[35mStock Load (2.8ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1  [["symbol", "BILI"]]
+  [1m[36mStock Load (1.0ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1[0m  [["symbol", "HUYA"]]
+  [1m[35mStock Load (0.2ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1  [["symbol", "KROTY"]]
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1[0m  [["symbol", "LZRFY"]]
+  [1m[35mStock Load (0.2ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1  [["symbol", "BBSEY"]]
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1[0m  [["symbol", "USNZY"]]
+  [1m[35mStock Load (0.2ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1  [["symbol", "HCM"]]
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1[0m  [["symbol", "JBSAY"]]
+  [1m[35mStock Load (0.4ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1  [["symbol", "ATDRY"]]
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1[0m  [["symbol", "CWH"]]
+  [1m[35mStock Load (0.2ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1  [["symbol", "ZS"]]
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1[0m  [["symbol", "BFLBF"]]
+  [1m[35mStock Load (0.2ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1  [["symbol", "CPL"]]
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1[0m  [["symbol", "UGP"]]
+  [1m[35mStock Load (0.2ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1  [["symbol", "LX"]]
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1[0m  [["symbol", "IQ"]]
+  [1m[35mStock Load (0.2ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1  [["symbol", "BDORY"]]
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1[0m  [["symbol", "ICPT"]]
+  [1m[35mStock Load (0.2ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1  [["symbol", "CIOXY"]]
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1[0m  [["symbol", "ECPCY"]]
+  [1m[35mStock Load (0.2ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1  [["symbol", "HOME"]]
+  [1m[36mStock Load (0.8ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1[0m  [["symbol", "AZUL"]]
+  [1m[35mStock Load (0.3ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1  [["symbol", "NTXFF"]]
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1[0m  [["symbol", "RES"]]
+  [1m[35mStock Load (0.2ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1  [["symbol", "LBRT"]]
+  [1m[36mStock Load (0.3ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1[0m  [["symbol", "SFUN"]]
+  [1m[35mStock Load (0.2ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1  [["symbol", "SCVUF"]]
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1[0m  [["symbol", "MKSI"]]
+  [1m[35mStock Load (0.2ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1  [["symbol", "INCZY"]]
+  [1m[36mStock Load (0.3ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1[0m  [["symbol", "PTEN"]]
+  [1m[35mStock Load (0.2ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1  [["symbol", "IMMU"]]
+  [1m[36mStock Load (0.3ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1[0m  [["symbol", "IITSF"]]
+  [1m[35mStock Load (0.2ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1  [["symbol", "WTTR"]]
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1[0m  [["symbol", "CEQP"]]
+  [1m[35mStock Load (0.3ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1  [["symbol", "NBR"]]
+  [1m[36mStock Load (0.4ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1[0m  [["symbol", "BPMP"]]
+  [1m[35mStock Load (0.2ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1  [["symbol", "NEXA"]]
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1[0m  [["symbol", "HOKCY"]]
+  [1m[35mStock Load (0.3ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1  [["symbol", "CQP"]]
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1[0m  [["symbol", "DPSGY"]]
+  [1m[35mStock Load (0.2ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1  [["symbol", "AEIS"]]
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1[0m  [["symbol", "PPERY"]]
+  [1m[35mStock Load (0.2ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1  [["symbol", "QD"]]
+  [1m[36mStock Load (0.2ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1[0m  [["symbol", "WYND-WI"]]
+  [1m[35mStock Load (0.3ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1  [["symbol", "GBT"]]
+  [1m[36mStock Load (0.3ms)[0m  [1mSELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1[0m  [["symbol", "PENN"]]
+  [1m[35mStock Load (0.2ms)[0m  SELECT  "stocks".* FROM "stocks" WHERE "stocks"."symbol" = $1 LIMIT 1  [["symbol", "CLVS"]]
