@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180608205444) do
+ActiveRecord::Schema.define(version: 20180611003745) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,19 @@ ActiveRecord::Schema.define(version: 20180608205444) do
 
   add_index "lawyers_specialties", ["lawyer_id"], name: "index_lawyers_specialties_on_lawyer_id", using: :btree
   add_index "lawyers_specialties", ["specialty_id"], name: "index_lawyers_specialties_on_specialty_id", using: :btree
+
+  create_table "prices", force: :cascade do |t|
+    t.string   "symbol"
+    t.string   "type"
+    t.datetime "datetime"
+    t.decimal  "open"
+    t.decimal  "close"
+    t.decimal  "high"
+    t.decimal  "low"
+    t.integer  "volume"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "specialties", force: :cascade do |t|
     t.string   "name"
