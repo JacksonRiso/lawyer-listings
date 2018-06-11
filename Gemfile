@@ -9,6 +9,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem "redis-activesupport" # - (heroku needs this)
 gem "redis-rails"
 gem "redis-store" # - (heroku needs this)
+gem 'newrelic_rpm' # Error tracking
 gem "sidekiq"
 gem "nokogiri"
 gem "httparty"
