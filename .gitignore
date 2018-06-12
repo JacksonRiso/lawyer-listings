@@ -38,3 +38,5 @@ latest.dump
 *.log
 
 *.log
+
+dump.rdb

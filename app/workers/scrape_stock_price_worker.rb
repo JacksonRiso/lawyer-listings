@@ -8,7 +8,7 @@ require 'open-uri'
 class ScrapeStockPriceWorker
   include Sidekiq::Worker
 
-  def perform(symbol, type)
+  def perform(symbol, price_type)
     # symbol = 'MSFT'
     # type = 'daily'
     apikey = '3TQBEBDIPSL35F38'
@@ -30,8 +30,8 @@ class ScrapeStockPriceWorker
       volume = array['5. volume']
 
       # Check if the datetime and symbol already exists
-      unless Price.find_by(symbol: symbol, type: type, datetime: datetime)
-        Price.create(symbol: symbol, type: type, datetime: datetime, open: open, close: close, high: high, low: low, volume: volume)
+      unless Price.find_by(symbol: symbol, price_type: price_type, datetime: datetime)
+        Price.create(symbol: symbol, price_type: price_type, datetime: datetime, open: open, close: close, high: high, low: low, volume: volume)
       end
     end
   end
