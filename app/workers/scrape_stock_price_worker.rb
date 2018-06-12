@@ -20,19 +20,25 @@ class ScrapeStockPriceWorker
       url = base_url + '?symbol=' + symbol + '&function=TIME_SERIES_DAILY&outputsize=full&apikey=' + apikey
     end
 
-    HTTParty.get(url).values[1].each do |key, array|
-      # Get all the values
-      datetime = key
-      open = array['1. open']
-      close = array['4. close']
-      high = array['2. high']
-      low = array['3. low']
-      volume = array['5. volume']
+    begin
+      HTTParty.get(url).values[1].each do |key, array|
+        # Get all the values
+        datetime = key
+        open = array['1. open']
+        close = array['4. close']
+        high = array['2. high']
+        low = array['3. low']
+        volume = array['5. volume']
 
-      # Check if the datetime and symbol already exists
-      unless Price.find_by(symbol: symbol, price_type: price_type, datetime: datetime)
-        Price.create(symbol: symbol, price_type: price_type, datetime: datetime, open: open, close: close, high: high, low: low, volume: volume)
+        # Check if the datetime and symbol already exists
+        unless Price.find_by(symbol: symbol, price_type: price_type, datetime: datetime)
+          Price.create(symbol: symbol, price_type: price_type, datetime: datetime, open: open, close: close, high: high, low: low, volume: volume)
+        end
       end
+    rescue StandardError
+      puts 'There is no data for this stock in AlphaVantage'
+      Stock.find_by(symbol: symbol).update(alpha_vantage: false)
+      puts "Updated stock so it won't be crawled again"
     end
   end
 end
