@@ -10,13 +10,13 @@ class ScrapeStockPriceWorker
 
   def perform(symbol, price_type)
     # symbol = 'MSFT'
-    # type = 'daily'
+    # price_type = 'daily'
     apikey = '3TQBEBDIPSL35F38'
     base_url = 'https://www.alphavantage.co/query'
 
-    if type == 'intraday'
+    if price_type == 'intraday'
       url = base_url + '?symbol=' + symbol + '&function=TIME_SERIES_INTRADAY&interval=30min&outputsize=full&apikey=' + apikey
-    elsif type == 'daily'
+    elsif price_type == 'daily'
       url = base_url + '?symbol=' + symbol + '&function=TIME_SERIES_DAILY&outputsize=full&apikey=' + apikey
     end
 
