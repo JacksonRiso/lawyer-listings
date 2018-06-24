@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180624173418) do
+ActiveRecord::Schema.define(version: 20180624222540) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,8 +51,10 @@ ActiveRecord::Schema.define(version: 20180624173418) do
     t.decimal  "high"
     t.decimal  "low"
     t.integer  "volume"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.string   "unique_identifier"
+    t.index ["unique_identifier"], name: "index_prices_on_unique_identifier", using: :btree
   end
 
   create_table "specialties", force: :cascade do |t|
@@ -68,6 +70,7 @@ ActiveRecord::Schema.define(version: 20180624173418) do
     t.datetime "updated_at",    null: false
     t.boolean  "alpha_vantage"
     t.datetime "last_crawled"
+    t.index ["symbol"], name: "index_stocks_on_symbol", using: :btree
   end
 
   create_table "urls", force: :cascade do |t|
@@ -77,6 +80,7 @@ ActiveRecord::Schema.define(version: 20180624173418) do
     t.datetime "last_crawled"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.index ["url"], name: "index_urls_on_url", using: :btree
   end
 
 end

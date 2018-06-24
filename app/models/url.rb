@@ -1,3 +1,3 @@
 class Url < ActiveRecord::Base
-  validates :url, uniqueness: true
+  validates :url, presence: true, uniqueness: true
 end
