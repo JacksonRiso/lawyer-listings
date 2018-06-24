@@ -1,7 +1,7 @@
 namespace :avvo_scraper do
   desc 'Pick the top 10 unscraped URLs and scrape them'
   task schedule_scrapes: :environment do
-    unless REDIS.get('avvo_scraper_last_error') > Time.now - 1.hour
+    unless REDIS.get('avvo_scraper_last_error') && REDIS.get('avvo_scraper_last_error') > Time.now - 1.hour
       Url.where(last_crawled: nil, domain: 'avvo').limit(5).each_with_index do |url, index|
         time = (index + 1).minutes
         case url.url_type
