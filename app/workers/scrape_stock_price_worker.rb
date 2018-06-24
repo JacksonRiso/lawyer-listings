@@ -35,6 +35,8 @@ class ScrapeStockPriceWorker
         unless Price.find_by(symbol: symbol, price_type: price_type, datetime: datetime)
           Price.create(symbol: symbol, price_type: price_type, datetime: datetime, open: open, close: close, high: high, low: low, volume: volume)
         end
+        # Update the Stock
+        Stock.find_by(symbol: symbol).update(alpha_vantage: true, last_crawled: Time.now)
       end
     rescue StandardError
       puts 'There is no data for this stock in AlphaVantage'
