@@ -1,3 +1,7 @@
+require 'rubygems'
+require 'nokogiri'
+require 'open-uri'
+
 module Avvo
   def self.open_avvo_url
     Nokogiri::HTML(open(url, 'User-Agent' => 'firefox'))
