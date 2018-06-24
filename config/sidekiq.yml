@@ -1,0 +1,9 @@
+:concurrency: 5
+staging:
+  :concurrency: 1
+production:
+  :concurrency: 10
+:queues:
+  - avvo
+  - stock
+  - price

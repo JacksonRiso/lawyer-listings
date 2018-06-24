@@ -7,6 +7,7 @@ require 'open-uri'
 
 class ScrapeStockPriceWorker
   include Sidekiq::Worker
+  sidekiq_options queue: :price, retry: false, backtrace: false
 
   def perform(symbol, price_type)
     # symbol = 'MSFT'

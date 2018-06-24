@@ -6,6 +6,7 @@ require 'open-uri'
 
 class ScrapeAvvoLocationListWorker
   include Sidekiq::Worker
+  sidekiq_options queue: :avvo, retry: false, backtrace: false
 
   def perform(url)
     # url = "https://www.avvo.com/find-a-lawyer"

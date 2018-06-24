@@ -6,6 +6,7 @@ require 'open-uri'
 
 class ScrapeAvvoUsersListWorker
   include Sidekiq::Worker
+  sidekiq_options queue: :avvo, retry: false, backtrace: false
 
   def perform(url)
     page = Nokogiri::HTML(open(url, 'User-Agent' => 'firefox'))

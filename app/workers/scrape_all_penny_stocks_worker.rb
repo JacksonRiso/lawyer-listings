@@ -6,6 +6,7 @@ require 'open-uri'
 
 class ScrapeAllPennyStocksWorker
   include Sidekiq::Worker
+  sidekiq_options queue: :stock, retry: false, backtrace: true
 
   def perform
     urls = ['http://www.allpennystocks.com/aps_us/hot_nasdaq_stocks.asp', 'http://www.allpennystocks.com/aps_us/hot_otc_stocks.asp']

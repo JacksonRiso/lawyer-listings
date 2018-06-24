@@ -6,6 +6,7 @@ require 'open-uri'
 
 class ScrapeYahooStocksWorker
   include Sidekiq::Worker
+  sidekiq_options queue: :stock, retry: false, backtrace: true
 
   def perform
     urls = ['https://finance.yahoo.com/gainers', 'https://finance.yahoo.com/losers']
