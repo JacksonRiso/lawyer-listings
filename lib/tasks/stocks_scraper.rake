@@ -1,4 +1,4 @@
-namespace :avvo_scraper do
+namespace :stocks_scraper do
   desc 'Scrape the highest performing stocks of the day'
   task schedule_scrapes: :environment do
     ScrapeYahooStocksWorker.perform_async
