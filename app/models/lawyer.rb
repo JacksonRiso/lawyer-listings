@@ -1,4 +1,4 @@
 class Lawyer < ActiveRecord::Base
-	has_many :urls
-	has_many :specialties
+  validates :avvo_url, uniqueness: true
+  has_many :specialties
 end

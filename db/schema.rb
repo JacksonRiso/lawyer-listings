@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180624165039) do
+ActiveRecord::Schema.define(version: 20180624173418) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +30,7 @@ ActiveRecord::Schema.define(version: 20180624165039) do
     t.string   "email_address"
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
+    t.string   "avvo_url"
   end
 
   create_table "lawyers_specialties", id: false, force: :cascade do |t|
@@ -38,10 +38,9 @@ ActiveRecord::Schema.define(version: 20180624165039) do
     t.integer "specialty_id",                              null: false
     t.integer "percent_of_business_is_this_specialty"
     t.integer "number_of_years_working_in_this_specialty"
+    t.index ["lawyer_id"], name: "index_lawyers_specialties_on_lawyer_id", using: :btree
+    t.index ["specialty_id"], name: "index_lawyers_specialties_on_specialty_id", using: :btree
   end
-
-  add_index "lawyers_specialties", ["lawyer_id"], name: "index_lawyers_specialties_on_lawyer_id", using: :btree
-  add_index "lawyers_specialties", ["specialty_id"], name: "index_lawyers_specialties_on_specialty_id", using: :btree
 
   create_table "prices", force: :cascade do |t|
     t.string   "symbol"

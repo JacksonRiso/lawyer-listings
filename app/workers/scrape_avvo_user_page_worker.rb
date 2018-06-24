@@ -28,14 +28,17 @@ class ScrapeAvvoUserPageWorker
       # puts profile_has_been_claimed = page.css.text() ##boolean
       # puts avvo_stars = page.css('.v-lawyer-card').css('.u-font-size-large')[0]["content"]
 
-      # #ADD TO DATABASE
-      Lawyer.create(name: name,
-                    phone_number: phone_number, website: website, address: address, avvo_rating: avvo_rating,
-                    number_of_avvo_legal_answers: number_of_avvo_legal_answers,
-                    number_of_avvo_legal_guides: number_of_avvo_legal_guides,
-                    number_of_avvo_reviews: number_of_avvo_reviews,
-                    number_of_years_licensed: number_of_years_licensed)
+      # ADD TO DATABASE
+      unless Lawyer.find_by(avvo_url: url)
+        Lawyer.create(avvo_url: url, name: name,
+                      phone_number: phone_number, website: website, address: address, avvo_rating: avvo_rating,
+                      number_of_avvo_legal_answers: number_of_avvo_legal_answers,
+                      number_of_avvo_legal_guides: number_of_avvo_legal_guides,
+                      number_of_avvo_reviews: number_of_avvo_reviews,
+                      number_of_years_licensed: number_of_years_licensed)
+      end
 
+      # Update URL
       Url.find_by(url: url).update(last_crawled: Time.now)
     end
   end
