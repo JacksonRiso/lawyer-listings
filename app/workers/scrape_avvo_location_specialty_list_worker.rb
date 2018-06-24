@@ -9,7 +9,7 @@ class ScrapeAvvoLocationSpecialtyListWorker
   sidekiq_options queue: :avvo, retry: false, backtrace: false
 
   def perform(url)
-    page = open_avvo_url(url)
+    page = Avvo.open_avvo_url(url)
     unless page.nil?
       page.css('.pa-list').css('a').each do |specialty|
         link = 'https://avvo.com' + specialty['href']

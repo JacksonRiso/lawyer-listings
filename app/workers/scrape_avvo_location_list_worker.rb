@@ -10,7 +10,7 @@ class ScrapeAvvoLocationListWorker
 
   def perform(url)
     # url = "https://www.avvo.com/find-a-lawyer"
-    page = open_avvo_url(url)
+    page = Avvo.open_avvo_url(url)
     unless page.nil?
       page.css('#js-top-state-link-farm').css('ol.unstyled-list').css('li').each do |state|
         link = 'https://avvo.com' + state.css('a')[0]['href']

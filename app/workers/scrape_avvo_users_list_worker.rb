@@ -9,7 +9,7 @@ class ScrapeAvvoUsersListWorker
   sidekiq_options queue: :avvo, retry: false, backtrace: false
 
   def perform(url)
-    page = open_avvo_url(url)
+    page = Avvo.open_avvo_url(url)
     unless page.nil?
 
       # Scrape pagination
