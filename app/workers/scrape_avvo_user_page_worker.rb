@@ -20,7 +20,7 @@ class ScrapeAvvoUserPageWorker
       number_of_avvo_legal_answers = page.css('.contribution-section').css('tr')[0].css('td')[1].text.to_i
       number_of_avvo_legal_guides = page.css('.contribution-section').css('tr')[1].css('td')[1].text.to_i
       number_of_avvo_reviews = page.css("[itemprop='reviewCount']")[0] ? page.css("[itemprop='reviewCount']")[0]['content'] : 0
-      number_of_years_licensed = page.css('.v-lawyer-card').css('time') ? TimeDifference.between(page.css('.v-lawyer-card').css('time')[0]['datetime'], Time.now).in_years.to_i : nil
+      number_of_years_licensed = page.css('.v-lawyer-card').css('time') && page.css('.v-lawyer-card').css('time')[0] ? TimeDifference.between(page.css('.v-lawyer-card').css('time')[0]['datetime'], Time.now).in_years.to_i : nil
 
       # #$$$$TO DO
       # puts offers_free_consultation = page.css().text ##boolean
