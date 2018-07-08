@@ -14,6 +14,7 @@ namespace :avvo_scraper do
         when 'user'
           ScrapeAvvoUserPageWorker.perform_in(time, url.url)
         else
+          puts url.url_type
           raise 'Url type does not match options in avvo_scraper.rake'
         end
       end
