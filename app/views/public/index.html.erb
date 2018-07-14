@@ -1,10 +1,15 @@
+<style>
+h3{
+  padding-top:50px;
+}
+</style>
+
 <h1>Stats</h1>
 <a href="/sidekiq">View SideKiq Jobs</a>
 
 <h3>Lawyers</h3>
 <p class="total">Total: <b><%= number_to_human(@number_of_lawyers) %></b></p>
 <div class="by-day">
-<p>by Day</p>
   <% @lawyers_created_by_day.each do |day| %>
     <p><b><%= day[0].strftime('%A') %>:</b> <span> <%=day[1] %></span></p>
   <% end %>
@@ -13,7 +18,6 @@
 <h3>URLs</h3>
 <p class="total">Total: <b><%= number_to_human(@number_of_urls) %></b></p>
 <div class="by-day">
-<p>by Day</p>
   <% @urls_created_by_day.each do |day| %>
     <p><b><%= day[0].strftime('%A') %>:</b> <span> <%=day[1] %></span></p>
   <% end %>
@@ -22,7 +26,6 @@
 <h3>Stocks</h3>
 <p class="total">Total: <b><%= number_to_human(@number_of_stocks) %></b></p>
 <div class="by-day">
-<p>by Day</p>
   <% @stocks_created_by_day.each do |day| %>
     <p><b><%= day[0].strftime('%A') %>:</b> <span> <%=day[1] %></span></p>
   <% end %>
@@ -31,7 +34,6 @@
 <h3>Prices</h3>
 <p class="total">Total: <b><%= number_to_human(@number_of_prices) %></b></p>
 <div class="by-day">
-<p>by Day</p>
   <% @prices_created_by_day.each do |day| %>
     <p><b><%= day[0].strftime('%A') %>:</b> <span> <%=day[1] %></span></p>
   <% end %>
