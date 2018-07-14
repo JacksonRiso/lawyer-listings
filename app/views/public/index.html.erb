@@ -6,7 +6,7 @@
 <div class="by-day">
 <p>by Day</p>
   <% @lawyers_created_by_day.each do |day| %>
-    <b><%= day[0].strftime('%A') %>:</b> <span> day[1]</span>
+    <p><b><%= day[0].strftime('%A') %>:</b> <span> <%=day[1] %></span></p>
   <% end %>
 </div>
 
@@ -15,7 +15,7 @@
 <div class="by-day">
 <p>by Day</p>
   <% @urls_created_by_day.each do |day| %>
-    <b><%= day[0].strftime('%A') %>:</b> <span> day[1]</span>
+    <p><b><%= day[0].strftime('%A') %>:</b> <span> <%=day[1] %></span></p>
   <% end %>
 </div>
 
@@ -24,7 +24,7 @@
 <div class="by-day">
 <p>by Day</p>
   <% @stocks_created_by_day.each do |day| %>
-    <b><%= day[0].strftime('%A') %>:</b> <span> day[1]</span>
+    <p><b><%= day[0].strftime('%A') %>:</b> <span> <%=day[1] %></span></p>
   <% end %>
 </div>
 
@@ -33,6 +33,6 @@
 <div class="by-day">
 <p>by Day</p>
   <% @prices_created_by_day.each do |day| %>
-    <b><%= day[0].strftime('%A') %>:</b> <span> day[1]</span>
+    <p><b><%= day[0].strftime('%A') %>:</b> <span> <%=day[1] %></span></p>
   <% end %>
 </div>
