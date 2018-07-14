@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180714204608) do
+ActiveRecord::Schema.define(version: 20180714210626) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,7 +45,6 @@ ActiveRecord::Schema.define(version: 20180714204608) do
     t.integer  "number_of_avvo_reviews"
     t.integer  "number_of_years_licensed"
     t.boolean  "offers_free_consultation"
-    t.string   "email_address"
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
     t.string   "avvo_url"
