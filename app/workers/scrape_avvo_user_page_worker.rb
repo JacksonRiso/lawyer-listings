@@ -30,12 +30,16 @@ class ScrapeAvvoUserPageWorker
 
       # ADD TO DATABASE
       unless Lawyer.find_by(avvo_url: url)
-        Lawyer.create(avvo_url: url, name: name,
-                      phone_number: phone_number, website: website, address: address, avvo_rating: avvo_rating,
+        Lawyer.create(avvo_url: url, name: name, website: website,
+                      address: address, avvo_rating: avvo_rating,
                       number_of_avvo_legal_answers: number_of_avvo_legal_answers,
                       number_of_avvo_legal_guides: number_of_avvo_legal_guides,
                       number_of_avvo_reviews: number_of_avvo_reviews,
                       number_of_years_licensed: number_of_years_licensed)
+      end
+
+      unless phone_number.empty? && ContactMethod.find_by(info: phone_number)
+        ContactMethod.create(lawyer_id: Lawyer.find_by(avvo_url: url), contact_method_type: 'phone_number', info: phone_number)
       end
 
       # Update URL
