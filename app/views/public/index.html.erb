@@ -1,6 +1,6 @@
 <h1>Stats</h1>
 <a href="/sidekiq">View SideKiq Jobs</a>
-<p>Number of Lawyers: <b><%= @number_of_lawyers %></b></p>
-<p>Number of URLs: <b><%= @number_of_urls %></b></p>
-<p>Number of Stocks: <b><%= @number_of_stocks %></b></p>
-<p>Number of Prices: <b><%= @number_of_prices %></b></p>
+<p>Number of Lawyers: <b><%= number_to_human(@number_of_lawyers) %></b></p>
+<p>Number of URLs: <b><%= number_to_human(@number_of_urls) %></b></p>
+<p>Number of Stocks: <b><%= number_to_human(@number_of_stocks) %></b></p>
+<p>Number of Prices: <b><%= number_to_human(@number_of_prices) %></b></p>
