@@ -11,7 +11,7 @@ h3{
 <p class="total">Total: <b><%= number_to_human(@number_of_lawyers) %></b></p>
 <div class="by-day">
   <% @lawyers_created_by_day.each do |day| %>
-    <p><b><%= day[0].strftime('%A') %>:</b> <span> <%=day[1] %></span></p>
+    <p><b><%= day[0].strftime('%D') %>:</b> <span> <%=day[1] %></span></p>
   <% end %>
 </div>
 
@@ -19,7 +19,7 @@ h3{
 <p class="total">Total: <b><%= number_to_human(@number_of_urls) %></b></p>
 <div class="by-day">
   <% @urls_created_by_day.each do |day| %>
-    <p><b><%= day[0].strftime('%A') %>:</b> <span> <%=day[1] %></span></p>
+    <p><b><%= day[0].strftime('%D') %>:</b> <span> <%=day[1] %></span></p>
   <% end %>
 </div>
 
@@ -27,7 +27,7 @@ h3{
 <p class="total">Total: <b><%= number_to_human(@number_of_stocks) %></b></p>
 <div class="by-day">
   <% @stocks_created_by_day.each do |day| %>
-    <p><b><%= day[0].strftime('%A') %>:</b> <span> <%=day[1] %></span></p>
+    <p><b><%= day[0].strftime('%D') %>:</b> <span> <%=day[1] %></span></p>
   <% end %>
 </div>
 
@@ -35,6 +35,6 @@ h3{
 <p class="total">Total: <b><%= number_to_human(@number_of_prices) %></b></p>
 <div class="by-day">
   <% @prices_created_by_day.each do |day| %>
-    <p><b><%= day[0].strftime('%A') %>:</b> <span> <%=day[1] %></span></p>
+    <p><b><%= day[0].strftime('%D') %>:</b> <span> <%=day[1] %></span></p>
   <% end %>
 </div>

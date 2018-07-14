@@ -10,10 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180630203651) do
+ActiveRecord::Schema.define(version: 20180714204608) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "contact_methods", force: :cascade do |t|
+    t.integer  "lawyer_id"
+    t.string   "type"
+    t.string   "info"
+    t.string   "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "interactions", force: :cascade do |t|
+    t.integer  "lawyer_id"
+    t.datetime "time_of_interaction"
+    t.integer  "contact_method_id"
+    t.string   "notes"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
 
   create_table "lawyers", force: :cascade do |t|
     t.string   "name"
