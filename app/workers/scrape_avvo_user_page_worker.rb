@@ -13,7 +13,7 @@ class ScrapeAvvoUserPageWorker
     unless page.nil?
 
       name = page.css('.v-lawyer-card').css('h1').text
-      phone_number = page.css('.overridable-lawyer-phone-copy') ? page.css('.overridable-lawyer-phone-copy').first.text.strip : nil
+      phone_number = page.css('.overridable-lawyer-phone-copy').first ? page.css('.overridable-lawyer-phone-copy').first.text.strip : nil
       website = page.css('.js-address-container').css('.u-margin-bottom-0')[0] ? page.css('.js-address-container').css('.u-margin-bottom-0')[0]['content'] : nil
       address = page.css('.v-lawyer-address').css('p')[0] ? page.css('.v-lawyer-address').css('p')[0].text : nil
       avvo_rating = page.css('.v-lawyer-card').css('.h3').text.to_i
