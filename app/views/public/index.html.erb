@@ -5,7 +5,8 @@ h3{
 </style>
 
 <h1>Stats</h1>
-<a href="/sidekiq">View SideKiq Jobs</a>
+<p><a target="_blank" href="/sidekiq">View SideKiq Jobs</a></p>
+<p><a target="_blank" href="https://rpm.newrelic.com/accounts/2003424/applications/122526105/filterable_errors#/table?top_facet=transactionUiName&barchart=barchart">View Errors</a></p>
 
 <h3>Lawyers</h3>
 <p class="total">Total: <b><%= number_to_human(@number_of_lawyers) %></b></p>
@@ -14,6 +15,10 @@ h3{
     <p><b><%= day[0].strftime('%D') %>:</b> <span> <%=day[1] %></span></p>
   <% end %>
 </div>
+
+<h3>Contact Methods</h3>
+<p class="total">Phone Numbers:<b> <%= number_to_human(@number_of_phone_numbers) %></b></p>
+<p class="total">Email Addresses:<b><%= number_to_human(@number_of_email_addresses) %></b></p>
 
 <h3>URLs</h3>
 <p class="total">Total: <b><%= number_to_human(@number_of_urls) %></b></p>
