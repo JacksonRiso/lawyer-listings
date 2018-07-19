@@ -21,6 +21,8 @@ class ScrapeAvvoUserPageWorker
       number_of_avvo_legal_guides = page.css('.contribution-section').css('tr')[1].css('td')[1].text.to_i
       number_of_avvo_reviews = page.css("[itemprop='reviewCount']")[0] ? page.css("[itemprop='reviewCount']")[0]['content'] : 0
       number_of_years_licensed = page.css('.v-lawyer-card').css('time') && page.css('.v-lawyer-card').css('time')[0] ? TimeDifference.between(page.css('.v-lawyer-card').css('time')[0]['datetime'], Time.now).in_years.to_i : nil
+      facebook_link = page.css('#contact').css('a[href*="facebook.com"]') ? page.css('#contact').css('a[href*="facebook.com"]')[0]['href'] : nil
+      twitter_link = page.css('#contact').css('a[href*="twitter.com"]') ? page.css('#contact').css('a[href*="twitter.com"]')[0]['href'] : nil
 
       # #$$$$TO DO
       # puts offers_free_consultation = page.css().text ##boolean
@@ -38,8 +40,18 @@ class ScrapeAvvoUserPageWorker
                       number_of_years_licensed: number_of_years_licensed)
       end
 
+      lawyer_id = Lawyer.find_by(avvo_url: url).id
+
       unless phone_number.empty? && ContactMethod.find_by(info: phone_number)
-        ContactMethod.create(lawyer_id: Lawyer.find_by(avvo_url: url), contact_method_type: 'phone_number', info: phone_number)
+        ContactMethod.create(lawyer_id: lawyer_id, contact_method_type: 'phone_number', info: phone_number)
+      end
+
+      unless facebook_link.empty? && ContactMethod.find_by(info: facebook_link)
+        ContactMethod.create(lawyer_id: lawyer_id, contact_method_type: 'facebook', info: facebook_link)
+      end
+
+      unless twitter_link.empty? && ContactMethod.find_by(info: twitter_link)
+        ContactMethod.create(lawyer_id: lawyer_id, contact_method_type: 'twitter', info: twitter_link)
       end
 
       # Update URL
