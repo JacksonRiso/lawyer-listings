@@ -42,15 +42,15 @@ class ScrapeAvvoUserPageWorker
 
       lawyer_id = Lawyer.find_by(avvo_url: url).id
 
-      unless phone_number.empty? && ContactMethod.find_by(info: phone_number)
+      unless phone_number && ContactMethod.find_by(info: phone_number)
         ContactMethod.create(lawyer_id: lawyer_id, contact_method_type: 'phone_number', info: phone_number)
       end
 
-      unless facebook_link.empty? && ContactMethod.find_by(info: facebook_link)
+      unless facebook_link && ContactMethod.find_by(info: facebook_link)
         ContactMethod.create(lawyer_id: lawyer_id, contact_method_type: 'facebook', info: facebook_link)
       end
 
-      unless twitter_link.empty? && ContactMethod.find_by(info: twitter_link)
+      unless twitter_link && ContactMethod.find_by(info: twitter_link)
         ContactMethod.create(lawyer_id: lawyer_id, contact_method_type: 'twitter', info: twitter_link)
       end
 
