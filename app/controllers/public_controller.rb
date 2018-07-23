@@ -13,7 +13,7 @@ class PublicController < ApplicationController
 
     # Urls
     @number_of_urls = Url.all.count
-    @number_of_crawled_urls = Url.where(domain: 'avvo').not.where(last_crawled: nil).count
+    @number_of_crawled_urls = Url.where(domain: 'avvo').where('last_crawled IS NOT NULL').count
     @number_of_uncrawled_urls = Url.where(last_crawled: nil, domain: 'avvo').count
 
     @urls_created_by_day = Url.where('created_at >= ?', 1.week.ago).group("DATE_TRUNC('day', created_at)").order("DATE_TRUNC('day', created_at)").count
