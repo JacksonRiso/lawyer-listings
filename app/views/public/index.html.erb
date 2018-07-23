@@ -27,7 +27,7 @@ h3{
 <p class="total">Total: <b><%= number_to_human(@number_of_urls) %></b></p>
 <p class="total">Total Crawled: <b><%= number_to_human(@number_of_crawled_urls) %></b></p>
 <p class="total">Total Uncrawled: <b><%= number_to_human(@number_of_uncrawled_urls) %></b></p>
-<p class="total">Approx. Number of Days until All URls are crawled: <b><%= number_to_human(@days_until_all_urls_are_crawled) %></b></p>
+<p class="total">Approx. Number of Days until All URls are crawled: <b><%= number_to_human(@number_of_uncrawled_urls/500) %></b></p>
 <div class="by-day">
   <% @urls_created_by_day.each do |day| %>
     <p><b><%= day[0].strftime('%D') %>:</b> <span> <%=day[1] %></span></p>
