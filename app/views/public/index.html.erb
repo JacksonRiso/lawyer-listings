@@ -18,10 +18,16 @@ h3{
 
 <h3>Contact Methods</h3>
 <p class="total">Phone Numbers:<b> <%= number_to_human(@number_of_phone_numbers) %></b></p>
-<p class="total">Email Addresses:<b><%= number_to_human(@number_of_email_addresses) %></b></p>
+<p class="total">Email Addresses:<b> <%= number_to_human(@number_of_email_addresses) %></b></p>
+<p class="total">Facebooks:<b> <%= number_to_human(@number_of_facebooks) %></b></p>
+<p class="total">Twitters:<b> <%= number_to_human(@number_of_twitters) %></b></p>
+<p class="total">LinkedIns:<b> <%= number_to_human(@number_of_linkedins) %></b></p>
 
 <h3>URLs</h3>
 <p class="total">Total: <b><%= number_to_human(@number_of_urls) %></b></p>
+<p class="total">Total Crawled: <b><%= number_to_human(@number_of_crawled_urls) %></b></p>
+<p class="total">Total Uncrawled: <b><%= number_to_human(@number_of_uncrawled_urls) %></b></p>
+<p class="total">Approx. Number of Days until All URls are crawled: <b><%= number_to_human(@days_until_all_urls_are_crawled) %></b></p>
 <div class="by-day">
   <% @urls_created_by_day.each do |day| %>
     <p><b><%= day[0].strftime('%D') %>:</b> <span> <%=day[1] %></span></p>
