@@ -22,13 +22,14 @@ class ScrapeLawyerWebsiteWorker
         ContactMethod.create(lawyer_id: lawyer_id, contact_method_type: 'facebook', info: facebook)
       end
 
-      unless twitter_link && ContactMethod.find_by(info: twitter)
+      unless twitter && ContactMethod.find_by(info: twitter)
         ContactMethod.create(lawyer_id: lawyer_id, contact_method_type: 'twitter', info: twitter)
       end
 
-      unless linkedin_link && ContactMethod.find_by(info: linkedin)
+      unless linkedin && ContactMethod.find_by(info: linkedin)
         ContactMethod.create(lawyer_id: lawyer_id, contact_method_type: 'linkedin', info: linkedin)
       end
+      Lawyer.find_by(lawyer_id).update(website_crawled: Time.now)
     end
   end
 end
