@@ -29,7 +29,8 @@ class ScrapeLawyerWebsiteWorker
       unless linkedin && ContactMethod.find_by(info: linkedin)
         ContactMethod.create(lawyer_id: lawyer_id, contact_method_type: 'linkedin', info: linkedin)
       end
-      Lawyer.find_by(lawyer_id).update(website_crawled: Time.now)
+
+      Lawyer.find_by(id: lawyer_id).update(website_crawled: Time.now)
     end
   end
 end
