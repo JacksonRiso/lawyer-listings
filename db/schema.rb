@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180724175002) do
+ActiveRecord::Schema.define(version: 20180727132727) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20180724175002) do
     t.string   "avvo_url"
     t.string   "status"
     t.datetime "website_crawled"
+    t.string   "website_status_code"
   end
 
   create_table "lawyers_specialties", id: false, force: :cascade do |t|
