@@ -7,7 +7,11 @@ class ScrapeLawyerWebsiteWorker
   sidekiq_options queue: :lawyer_website, retry: false, backtrace: false
 
   def perform(url, lawyer_id)
-    page = LawyerWebsite.open(url, lawyer_id)
+    begin
+      page = Nokogiri::HTML(open(url, 'User-Agent' => 'firefox'))
+    rescue OpenURI::HTTPError => error
+      Lawyer.find_by(id: lawyer_id).update(website_status_code: error.status)
+    end
 
     unless page.nil?
       email = page.css('a[href*="mailto"]')[0] ? page.css('a[href*="mailto"]')[0]['href'].gsub('mailto:', '') : nil
