@@ -7,9 +7,7 @@ class ScrapeLawyerWebsiteWorker
   sidekiq_options queue: :lawyer_website, retry: false, backtrace: false
 
   def perform(url, lawyer_id)
-    puts 'URL GOES HERE'
-    puts url
-    puts 'URL GOES HERE'
+    url = "http://#{url}" unless url[/\Ahttp:\/\//] || self.url[/\Ahttps:\/\//]
 
     page = begin
       Nokogiri::HTML(open(url,
