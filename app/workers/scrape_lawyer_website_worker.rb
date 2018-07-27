@@ -11,10 +11,11 @@ class ScrapeLawyerWebsiteWorker
     puts url
     puts 'URL GOES HERE'
 
-    begin
-      page = Nokogiri::HTML(open(url, 'User-Agent' => 'firefox'))
+    page = begin
+      Nokogiri::HTML(open(url, 'User-Agent' => 'firefox'))
     rescue OpenURI::HTTPError => error
       Lawyer.find_by(id: lawyer_id).update(website_status_code: error.status)
+      return nil
     end
 
     unless page.nil?
