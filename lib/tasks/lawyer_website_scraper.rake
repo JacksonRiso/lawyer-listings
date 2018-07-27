@@ -3,7 +3,7 @@ namespace :lawyer_website_scraper do
   task schedule_scrapes: :environment do
     Lawyer.where(website_crawled: nil).where('website IS NOT NULL').limit(10).each_with_index do |lawyer, index|
       time = (index + 1).minutes
-      ScrapeLawyerWebsiteWorker.perform_in(time, lawyer.website, lawyer.id)
+      ScrapeLawyerWebsiteWorker.perform_in(time, lawyer.website.to_s, lawyer.id)
     end
   end
 end
