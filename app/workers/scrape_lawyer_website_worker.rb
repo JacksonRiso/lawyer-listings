@@ -24,23 +24,12 @@ class ScrapeLawyerWebsiteWorker
       twitter = page.css('a[href*="twitter.com"]')[0] ? page.css('a[href*="twitter.com"]')[0]['href'] : nil
       linkedin = page.css('a[href*="linkedin.com"]')[0] ? page.css('a[href*="linkedin.com"]')[0]['href'] : nil
 
-      unless email || ContactMethod.find_by(info: email)
-        ContactMethod.create(lawyer_id: lawyer_id, contact_method_type: 'email', info: email)
-      end
-
-      unless facebook || ContactMethod.find_by(info: facebook)
-        ContactMethod.create(lawyer_id: lawyer_id, contact_method_type: 'facebook', info: facebook)
-      end
-
-      unless twitter || ContactMethod.find_by(info: twitter)
-        ContactMethod.create(lawyer_id: lawyer_id, contact_method_type: 'twitter', info: twitter)
-      end
-
-      unless linkedin || ContactMethod.find_by(info: linkedin)
-        ContactMethod.create(lawyer_id: lawyer_id, contact_method_type: 'linkedin', info: linkedin)
-      end
-
+      ContactMethod.add_contact_method('email', email, lawyer_id)
+      ContactMethod.add_contact_method('facebook', facebook, lawyer_id)
+      ContactMethod.add_contact_method('twitter', twitter, lawyer_id)
+      ContactMethod.add_contact_method('linkedin', linkedin, lawyer_id)
       Lawyer.find_by(id: lawyer_id).update(website_crawled: Time.now)
+
     end
   end
 end

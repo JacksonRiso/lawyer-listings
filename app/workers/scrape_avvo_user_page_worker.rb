@@ -42,24 +42,10 @@ class ScrapeAvvoUserPageWorker
       end
 
       lawyer_id = Lawyer.find_by(avvo_url: url).id
-
-      unless phone_number.nil? || ContactMethod.find_by(info: phone_number)
-        ContactMethod.create(lawyer_id: lawyer_id, contact_method_type: 'phone_number', info: phone_number)
-      end
-
-      unless facebook.nil? || ContactMethod.find_by(info: facebook)
-        ContactMethod.create(lawyer_id: lawyer_id, contact_method_type: 'facebook', info: facebook)
-      end
-
-      unless twitter.nil? || ContactMethod.find_by(info: twitter)
-        ContactMethod.create(lawyer_id: lawyer_id, contact_method_type: 'twitter', info: twitter)
-      end
-
-      unless linkedin.nil? || ContactMethod.find_by(info: linkedin)
-        ContactMethod.create(lawyer_id: lawyer_id, contact_method_type: 'linkedin', info: linkedin)
-      end
-
-      # Update URL
+      ContactMethod.add_contact_method('phone_number', phone_number, lawyer_id)
+      ContactMethod.add_contact_method('facebook', facebook, lawyer_id)
+      ContactMethod.add_contact_method('twitter', twitter, lawyer_id)
+      ContactMethod.add_contact_method('linkedin', linkedin, lawyer_id)
       Url.find_by(url: url).update(last_crawled: Time.now)
     end
   end
