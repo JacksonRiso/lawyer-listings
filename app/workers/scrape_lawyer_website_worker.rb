@@ -13,7 +13,8 @@ class ScrapeLawyerWebsiteWorker
       Nokogiri::HTML(open(url,
                           'User-Agent' => 'firefox'))
     rescue OpenURI::HTTPError => error
-      Lawyer.find_by(id: lawyer_id).update(website_status_code: error.status)
+      response = error.io
+      Lawyer.find_by(id: lawyer_id).update(website_status_code: response.status)
       return nil
     end
 
