@@ -18,6 +18,9 @@ class ScrapeLawyerWebsiteWorker
       response = error.io
       Lawyer.find_by(id: lawyer_id).update(website_status_code: response.status)
       return nil
+    rescue SocketError => error
+      Lawyer.find_by(id: lawyer_id).update(website_status_code: 'socket error')
+      return nil
     end
 
     unless page.nil?
