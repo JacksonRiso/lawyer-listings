@@ -1,5 +1,4 @@
-Price.where('percent_difference_between_open_and_close IS NULL').count
-while Price.where('percent_difference_between_open_and_close IS NULL')
+while Price.where('percent_difference_between_open_and_close IS NULL').count > 0
   Price.where('percent_difference_between_open_and_close IS NULL').limit(100_000).each do |price|
     percent_difference_between_open_and_close = ((price.open - price.close) / price.open) * 100
     percent_difference_between_low_and_high = ((price.low - price.high) / price.high) * 100
