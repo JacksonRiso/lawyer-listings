@@ -19,6 +19,7 @@ gem 'turbolinks'
 gem 'jbuilder'
 gem 'sdoc'
 gem 'time_difference'
+gem 'open_uri_redirections'
 
 group :development, :test do
   gem 'byebug'

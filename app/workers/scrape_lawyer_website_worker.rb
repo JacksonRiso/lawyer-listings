@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'nokogiri'
 require 'open-uri'
+require 'open_uri_redirections'
 
 class ScrapeLawyerWebsiteWorker
   include Sidekiq::Worker
