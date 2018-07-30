@@ -9,7 +9,7 @@ class ScrapeStockPriceWorker
   include Sidekiq::Worker
   sidekiq_options queue: :price, retry: false, backtrace: false
 
-  def perform(symbol, price_type)
+  def perform(symbol, price_type, stock_created_at)
     # symbol = 'MSFT'
     # price_type = 'daily'
     apikey = '3TQBEBDIPSL35F38'
@@ -30,11 +30,11 @@ class ScrapeStockPriceWorker
         high = array['2. high']
         low = array['3. low']
         volume = array['5. volume']
-
+        days_since_crawl = (stock_created_at.to_date - datetime.to_date).to_i
         # Check if the datetime and symbol already exists
         unique_identifier = symbol + '-' + price_type + '-' + datetime.to_s
         unless Price.find_by(unique_identifier: unique_identifier)
-          Price.create(unique_identifier: unique_identifier, symbol: symbol, price_type: price_type, datetime: datetime, open: open, close: close, high: high, low: low, volume: volume)
+          Price.create(unique_identifier: unique_identifier, symbol: symbol, price_type: price_type, datetime: datetime, open: open, close: close, high: high, low: low, volume: volume, days_since_crawl: days_since_crawl)
         end
         # Update the Stock
         Stock.find_by(symbol: symbol).update(alpha_vantage: true, last_crawled: Time.now)
