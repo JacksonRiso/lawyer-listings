@@ -31,10 +31,10 @@ class ScrapeStockPriceWorker
         low = array['3. low']
         volume = array['5. volume']
         days_since_crawl = (stock_created_at.to_date - datetime.to_date).to_i
+
         # Check if the datetime and symbol already exists
-        unique_identifier = symbol + '-' + price_type + '-' + datetime.to_s
-        unless Price.find_by(unique_identifier: unique_identifier)
-          Price.create(unique_identifier: unique_identifier, symbol: symbol, price_type: price_type, datetime: datetime, open: open, close: close, high: high, low: low, volume: volume, days_since_crawl: days_since_crawl)
+        unless Price.find_by(symbol: symbol, price_type: price_type, datetime: datetime)
+          Price.create(symbol: symbol, price_type: price_type, datetime: datetime, open: open, close: close, high: high, low: low, volume: volume, days_since_crawl: days_since_crawl)
         end
         # Update the Stock
         Stock.find_by(symbol: symbol).update(alpha_vantage: true, last_crawled: Time.now)
