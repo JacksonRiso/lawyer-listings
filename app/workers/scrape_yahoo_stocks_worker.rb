@@ -15,8 +15,10 @@ class ScrapeYahooStocksWorker
       page.css('#scr-res-table').css('tr').each do |table_row|
         next unless table_row.css('td')[1]
         symbol = table_row.css('td')[1].text
+        amount_change = table_row.css('td')[3].text
+        percent_change = table_row.css('td')[4].text
         unless Stock.find_by(symbol: symbol)
-          Stock.create(symbol: symbol, source: url)
+          Stock.create(symbol: symbol, source: url, amount_change: amount_change.to_d, percent_change: percent_change.to_d)
         end
       end
     end
