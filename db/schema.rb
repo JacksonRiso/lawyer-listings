@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180729205101) do
+ActiveRecord::Schema.define(version: 20180730200708) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,6 +75,7 @@ ActiveRecord::Schema.define(version: 20180729205101) do
     t.string   "unique_identifier"
     t.decimal  "percent_difference_between_open_and_close"
     t.decimal  "percent_difference_between_low_and_high"
+    t.integer  "days_since_crawl"
     t.index ["unique_identifier"], name: "index_prices_on_unique_identifier", using: :btree
   end
 
