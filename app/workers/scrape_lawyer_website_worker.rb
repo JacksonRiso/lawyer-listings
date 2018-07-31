@@ -21,6 +21,9 @@ class ScrapeLawyerWebsiteWorker
     rescue SocketError => error
       Lawyer.find_by(id: lawyer_id).update(website_status_code: 'socket error')
       return nil
+    rescue OpenSSL::SSL::SSLError => error
+      Lawyer.find_by(id: lawyer_id).update(website_status_code: 'open ssl error')
+      return nil
     end
 
     unless page.nil?
