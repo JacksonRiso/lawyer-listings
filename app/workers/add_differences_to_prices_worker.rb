@@ -1,4 +1,4 @@
-class ScrapeAllPennyStocksWorker
+class AddDifferencesToPricesWorker
   include Sidekiq::Worker
   sidekiq_options queue: :stock, retry: false, backtrace: true
 
