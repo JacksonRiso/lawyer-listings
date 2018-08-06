@@ -20,6 +20,7 @@ gem 'jbuilder'
 gem 'sdoc'
 gem 'time_difference'
 gem 'open_uri_redirections'
+gem 'puma'
 
 group :development, :test do
   gem 'byebug'
