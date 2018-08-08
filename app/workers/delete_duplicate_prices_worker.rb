@@ -3,7 +3,7 @@ class DeleteDuplicatePricesWorker
   sidekiq_options queue: :stock, retry: false, backtrace: true
 
   def perform
-    Price.where(days_since_crawl: nil).limit(10_000).each do |price|
+    Price.where(days_since_crawl: nil).limit(1_000).each do |price|
       # Look up created_at based on symbol
       stock_created_at = Stock.find_by(symbol: price.symbol).created_at
       days_since_crawl = (stock_created_at.to_date - price.datetime.to_date).to_i
