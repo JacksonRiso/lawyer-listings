@@ -1,5 +1,5 @@
 class Price < ActiveRecord::Base
-  validates :symbol, uniqueness: { scope: %i[datetime price_type] }
+  validates :symbol, uniqueness: { scope: %i[datetime] }
   validates :open, :close, :low, :high, presence: true, numericality: { other_than: 0 }
   before_create :create_differences
   def create_differences
