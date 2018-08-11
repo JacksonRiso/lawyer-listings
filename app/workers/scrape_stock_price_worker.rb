@@ -38,6 +38,7 @@ class ScrapeStockPriceWorker
     rescue StandardError
       puts 'There is no data for this stock in AlphaVantage'
       puts symbol
+      puts url
       Stock.find_by(symbol: symbol).update(alpha_vantage: false)
       puts "Updated stock so it won't be crawled again"
     end
