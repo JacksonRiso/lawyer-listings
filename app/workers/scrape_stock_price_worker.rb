@@ -9,17 +9,8 @@ class ScrapeStockPriceWorker
   include Sidekiq::Worker
   sidekiq_options queue: :price, retry: false, backtrace: false
 
-  def perform(symbol, price_type, stock_created_at)
-    # symbol = 'MSFT'
-    # price_type = 'daily'
-    apikey = '3TQBEBDIPSL35F38'
-    base_url = 'https://www.alphavantage.co/query'
-
-    if price_type == 'intraday'
-      url = base_url + '?symbol=' + symbol + '&function=TIME_SERIES_INTRADAY&interval=30min&outputsize=full&apikey=' + apikey
-    elsif price_type == 'daily'
-      url = base_url + '?symbol=' + symbol + '&function=TIME_SERIES_DAILY&outputsize=full&apikey=' + apikey
-    end
+  def perform(symbol, stock_created_at)
+    url = 'https://www.alphavantage.co/query?symbol=' + symbol + '&function=TIME_SERIES_DAILY&outputsize=full&apikey=3TQBEBDIPSL35F38'
 
     begin
       HTTParty.get(url).values[1].each do |key, array|
