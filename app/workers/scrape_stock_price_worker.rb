@@ -1,6 +1,11 @@
 # ScrapeStockPriceWorker.perform_async("MSFT", "intraday")
 # ScrapeStockPriceWorker.perform_async("MSFT", "daily")
 
+# Stock.where(alpha_vantage: false).each do |stock|
+#   stock.update(alpha_vantage: nil)
+# end
+# Stock.where('length(symbol) > 5').count
+
 require 'rubygems'
 require 'nokogiri'
 require 'open-uri'
