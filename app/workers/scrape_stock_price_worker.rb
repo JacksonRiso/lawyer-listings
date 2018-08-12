@@ -27,6 +27,8 @@ class ScrapeStockPriceWorker
       volume = array['5. volume']
       days_since_crawl = (stock_created_at.to_date - datetime.to_date).to_i
 
+      next unless days_since_crawl.abs <= 30
+
       # Check if the datetime and symbol already exists
       unless Price.find_by(symbol: symbol, datetime: datetime)
         Price.create(symbol: symbol, datetime: datetime, open: open, close: close, high: high, low: low, volume: volume, days_since_crawl: days_since_crawl)
