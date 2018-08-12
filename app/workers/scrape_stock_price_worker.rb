@@ -17,7 +17,10 @@ class ScrapeStockPriceWorker
   def perform(symbol, stock_created_at)
     url = 'https://www.alphavantage.co/query?symbol=' + symbol + '&function=TIME_SERIES_DAILY&outputsize=full&apikey=3TQBEBDIPSL35F38'
 
-    HTTParty.get(url).values[1].each do |key, array|
+    data = HTTParty.get(url).values[1]
+    puts url unless data
+
+    data.each do |key, array|
       # Get all the values
       datetime = key
       open = array['1. open']
